@@ -1,0 +1,28 @@
+{
+  "state": "ok",
+  "size": 3,
+  "stamp": "2017-08-09T18:58:29.991Z",
+  "data": [
+    {
+      "report_type_uid": "default_report_type_uid@domain",
+      "balance_type": "DAY",
+      "quote_init": 0,
+      "quote_up": 0,
+      "quote_use": 5
+    },
+    {
+      "report_type_uid": "default_report_type_uid@domain",
+      "balance_type": "MONTH",
+      "quote_init": 0,
+      "quote_up": 0,
+      "quote_use": 4
+    },
+    {
+      "report_type_uid": "default_report_type_uid@domain",
+      "balance_type": "TOTAL",
+      "quote_init": 0,
+      "quote_up": 0,
+      "quote_use": 29
+    }
+  ]
+}

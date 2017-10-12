@@ -1,0 +1,25 @@
+{
+  "state": "ok",
+  "size": 1,
+  "stamp": "2017-08-09T18:43:03.105Z",
+  "data": [
+    {
+      "login": "%username%@%domain%",
+      "email": "usermail@gmail.com",
+      "contacts": "+7 (800) 888 88 88",
+      "state": "ACTIVE",
+      "domain_uid": "%domain%",
+      "roles": "ADMIN,DOMAIN_ADMIN,ALL_REPORTS_READ,ALL_REPORTS_WRITE",
+      "uid": "%username%@%domain%",
+      "name": "Иванов Иван Иванович",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-08T13:05:27.384Z",
+      "created_by": "system",
+      "updated_at": "2017-08-09T05:29:10.004Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    }
+  ]
+}

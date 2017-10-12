@@ -1,0 +1,84 @@
+{
+  "state": "ok",
+  "size": 2,
+  "total": 2,
+  "stamp": "2017-08-09T19:24:58.380Z",
+  "data": [
+    {
+      "state": "PUBLISHED",
+      "day_quote": 0,
+      "month_quote": 0,
+      "total_quote": 0,
+      "content": {
+        "sources": [
+          "base",
+          "base.ext",
+          "gibdd.history",
+          "gibdd.dtp",
+          "gibdd.restrict",
+          "gibdd.wanted",
+          "base.tech",
+          "base.taxi",
+          "tech.base",
+          "tech.ext",
+          "strafe",
+          "pledge",
+          "ramiosago.base",
+          "ramiosago.ext",
+          "carprice",
+          "calc.nalog",
+          "calc.osago"
+        ],
+        "fields": []
+      },
+      "domain_uid": "%domain%",
+      "uid": "report_uuid_1@%domain%",
+      "name": "Полный отчет",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-07-07T06:12:29.820Z",
+      "created_by": "system",
+      "updated_at": "2017-08-09T05:29:09.992Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "state": "PUBLISHED",
+      "day_quote": 0,
+      "month_quote": 0,
+      "total_quote": 0,
+      "content": {
+        "sources": [
+          "base"
+        ],
+        "fields": [
+          "tech_data.brand.name.original",
+          "tech_data.model.name.original",
+          "identifiers.vehicle.reg_num",
+          "identifiers.vehicle.vin",
+          "tech_data.year",
+          "tech_data.engine.fuel.type",
+          "tech_data.engine.power.hp",
+          "tech_data.engine.volume",
+          "tech_data.engine.number",
+          "tech_data.wheel.position",
+          "tech_data.weight.netto",
+          "tech_data.weight.max",
+          "additional_info.vehicle.category.code"
+        ]
+      },
+      "domain_uid": "%domain%",
+      "uid": "report_uuid_2@%domain%",
+      "name": "Краткий отчет",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-08T13:05:27.377Z",
+      "created_by": "system",
+      "updated_at": "2017-08-09T05:29:09.998Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    }
+  ]
+}

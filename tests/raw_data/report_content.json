@@ -1,0 +1,610 @@
+{
+  "state": "ok",
+  "size": 1,
+  "stamp": "2017-08-09T20:10:49.916Z",
+  "data": [
+    {
+      "domain_uid": "domain",
+      "report_type_uid": "domain_full_report@domain",
+      "vehicle_id": "М111ОУ96",
+      "query": {
+        "type": "GRZ",
+        "body": "М111ОУ96"
+      },
+      "progress_ok": 10,
+      "progress_wait": 1,
+      "progress_error": 5,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "OK",
+            "data": {
+              "from_cache": true,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "tech.base",
+            "state": "ERROR",
+            "data": {
+              "from_cache": false,
+              "real_status": "CANCEL"
+            }
+          },
+          {
+            "_id": "strafe",
+            "state": "PROGRESS",
+            "data": {
+              "from_cache": false,
+              "real_status": "PROGRESS"
+            }
+          },
+          {
+            "_id": "ramiosago.ext",
+            "state": "ERROR",
+            "data": {
+              "from_cache": false,
+              "real_status": "CANCEL"
+            }
+          },
+          {
+            "_id": "calc.nalog",
+            "state": "ERROR",
+            "data": {
+              "from_cache": false,
+              "real_status": "CANCEL"
+            }
+          },
+          {
+            "_id": "calc.osago",
+            "state": "ERROR",
+            "data": {
+              "from_cache": false,
+              "real_status": "CANCEL"
+            }
+          },
+          {
+            "_id": "pledge",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "base.tech",
+            "state": "ERROR",
+            "data": {
+              "from_cache": false,
+              "real_status": "ERROR"
+            }
+          },
+          {
+            "_id": "base.ext",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "gibdd.dtp",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "carprice",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "base.taxi",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "tech.ext",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "gibdd.history",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "ramiosago.base",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "gibdd.restrict",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          },
+          {
+            "_id": "gibdd.wanted",
+            "state": "OK",
+            "data": {
+              "from_cache": false,
+              "real_status": "OK"
+            }
+          }
+        ]
+      },
+      "content": {
+        "identifiers": {
+          "_comment": "Идентификаторы",
+          "vehicle": {
+            "vin": "XW7BK40K90S000118",
+            "reg_num": "В061ВК196",
+            "sts": "66СУ629581",
+            "pts": "78ММ740718"
+          }
+        },
+        "tech_data": {
+          "_comment": "Характеристики ТС",
+          "manufacturer": {},
+          "brand": {
+            "_comment": "Марка",
+            "name": {
+              "original": "Тойота Камри"
+            }
+          },
+          "model": {
+            "_comment": "Модель",
+            "name": {
+              "original": "Тойота"
+            }
+          },
+          "type": {
+            "_comment": "Тип (Вид) ТС",
+            "name": "Легковые Автомобили Седан"
+          },
+          "body": {
+            "_comment": "Кузов",
+            "color": {
+              "name": "Светло-Серый",
+              "type": "Многоцветный"
+            },
+            "number": "ХW7ВК40К90S000118"
+          },
+          "year": 2008,
+          "chassis": {
+            "_comment": "Шасси",
+            "number": "OTCUTCTBUET"
+          },
+          "engine": {
+            "_comment": "Двигатель",
+            "fuel": {
+              "type": "Бензиновый"
+            },
+            "model": {
+              "name": "2GR"
+            },
+            "volume": 3456,
+            "power": {
+              "hp": 277,
+              "kw": 203.6
+            },
+            "number": "456704"
+          },
+          "weight": {
+            "_comment": "Масса",
+            "netto": 1610,
+            "max": 2050
+          },
+          "transmission": {
+            "_comment": "Трансмиссия"
+          },
+          "drive": {
+            "_comment": "Привод"
+          },
+          "wheel": {
+            "_comment": "Рулевое колесо"
+          }
+        },
+        "additional_info": {
+          "_comment": "Дополнительная информация",
+          "vehicle": {
+            "category": {
+              "code": "B",
+              "description": "Легковые автомобили, небольшие грузовики (до 3,5 тонн)"
+            },
+            "owner": {
+              "type": "PERSON",
+              "geo": {
+                "region": "Пермская Область, Индустриальный",
+                "city": "Пермь"
+              }
+            },
+            "passport": {
+              "date": {
+                "receive": "2008-02-29 00:00:00"
+              },
+              "org": {
+                "name": "ООО\"ТОЙОТА МОТОР\""
+              },
+              "number": "78ММ740718"
+            },
+            "notes": []
+          },
+          "identifiers": {
+            "vin": {}
+          }
+        },
+        "registration_actions": {
+          "_comment": "Регистрационные действия",
+          "items": [
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "В связи с прекращением права собственности (отчуждение, конфискация ТС)",
+              "geo": {}
+            },
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "UNKNOWN OPERATION",
+              "geo": {}
+            },
+            {
+              "date": {
+                "end": "2008-08-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация снятого с учета ТС",
+              "geo": {}
+            },
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "LEGAL"
+              },
+              "type": "В связи с прекращением права собственности (отчуждение, конфискация ТС)",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Г. Екатеринбург"
+              }
+            },
+            {
+              "date": {
+                "end": "2008-08-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация снятого с учета ТС",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Екатеринбург"
+              }
+            },
+            {
+              "date": {
+                "end": "2014-06-21 00:00:00"
+              },
+              "reg_num": "В061ВК196",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация снятого с учета ТС",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Пермь"
+              }
+            },
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "В связи с прекращением права собственности (отчуждение, конфискация ТС)",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Г. Екатеринбург"
+              }
+            },
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация ТС, прибывших из других регионов РФ",
+              "geo": {}
+            },
+            {
+              "date": {
+                "end": "2013-07-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "UNKNOWN OPERATION",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Г. Екатеринбург"
+              }
+            },
+            {
+              "date": {
+                "start": "2008-08-26 00:00:00",
+                "end": "2008-08-26 00:00:00"
+              },
+              "reg_num": "М111ОУ96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация снятого с учета ТС",
+              "geo": {
+                "country": "Россия",
+                "region": "Свердловская Область",
+                "city": "Екатеринбург"
+              }
+            },
+            {
+              "date": {
+                "start": "2008-05-06 00:00:00",
+                "end": "2014-06-21 00:00:00"
+              },
+              "reg_num": "В061ВК196",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "Регистрация снятого с учета ТС",
+              "geo": {
+                "country": "Россия",
+                "region": "Свердловская Область",
+                "city": "Пермь"
+              }
+            },
+            {
+              "date": {
+                "end": "2008-08-18 00:00:00"
+              },
+              "reg_num": "К153УН96",
+              "owner": {
+                "type": "PERSON"
+              },
+              "type": "В связи с прекращением права собственности (отчуждение, конфискация ТС)",
+              "geo": {
+                "region": "Свердловская Область",
+                "city": "Екатеринбург"
+              }
+            }
+          ],
+          "count": 6
+        },
+        "pledges": {
+          "_comment": "Обременения на ТС",
+          "items": [],
+          "count": 0
+        },
+        "leasings": {
+          "_comment": "Лизинг",
+          "items": [],
+          "count": 0
+        },
+        "customs": {
+          "history": {
+            "_comment": "История по таможне",
+            "items": [],
+            "count": 0
+          }
+        },
+        "taxi": {
+          "history": {
+            "_comment": "Такси",
+            "items": [],
+            "count": 0
+          }
+        },
+        "insurance": {
+          "osago": {
+            "_comment": "ОСАГО",
+            "items": [
+              {
+                "insurer": {
+                  "name": "Альфа-Страхование"
+                },
+                "date": {},
+                "restrictions": {
+                  "type": "WITH RESTRICTIONS"
+                },
+                "policy": {
+                  "series": "ЕЕЕ",
+                  "number": "0399192293"
+                }
+              }
+            ],
+            "count": 1
+          }
+        },
+        "stealings": {
+          "_comment": "Проверка на угон",
+          "items": [],
+          "count": 0
+        },
+        "accidents": {
+          "history": {
+            "_comment": "История ДТП",
+            "items": [],
+            "count": 0
+          }
+        },
+        "restrictions": {
+          "registration_actions": {
+            "_comment": "Ограничения на рег. действия",
+            "items": [],
+            "count": 0
+          }
+        },
+        "ownership": {
+          "history": {
+            "_comment": "История владения",
+            "items": [
+              {
+                "date": {
+                  "start": "2014-06-21 00:00:00"
+                },
+                "owner": {
+                  "type": "PERSON"
+                }
+              },
+              {
+                "date": {
+                  "start": "2008-08-26 00:00:00",
+                  "end": "2013-07-26 00:00:00"
+                },
+                "owner": {
+                  "type": "PERSON"
+                }
+              },
+              {
+                "date": {
+                  "start": "2008-05-06 00:00:00",
+                  "end": "2008-08-18 00:00:00"
+                },
+                "owner": {
+                  "type": "PERSON"
+                }
+              }
+            ],
+            "count": 3
+          }
+        },
+        "mileages": {
+          "_comment": "Пробеги",
+          "items": [
+            {
+              "date": {
+                "event": "2016-10-29 00:00:00"
+              },
+              "mileage": 145234
+            }
+          ],
+          "count": 1
+        },
+        "diagnostic_cards": {
+          "_comment": "Диагностические карты",
+          "items": [
+            {
+              "date": {
+                "from": "2016-10-29 00:00:00",
+                "to": "2017-10-29 00:00:00"
+              },
+              "doc": {
+                "number": "201610291542165738551",
+                "type": "Диагностическая карта"
+              },
+              "reg_num": "В061ВК196"
+            },
+            {
+              "date": {
+                "from": "2015-07-29 00:00:00",
+                "to": "2016-07-29 00:00:00"
+              },
+              "doc": {
+                "number": "201507291015102851995",
+                "type": "Диагностическая карта"
+              },
+              "reg_num": "В061ВК196"
+            },
+            {
+              "date": {
+                "from": "2014-06-21 00:00:00",
+                "to": "2016-06-21 00:00:00"
+              },
+              "doc": {
+                "number": "201406211307060952914",
+                "type": "Диагностическая карта"
+              }
+            }
+          ],
+          "count": 3
+        },
+        "utilizations": {
+          "_comment": "Утилизация",
+          "items": [],
+          "count": 0
+        },
+        "car_price": {
+          "_comment": "Приблизительные стоимости аналогичных автомобилей",
+          "items": [
+            {
+              "date": {},
+              "amount": 716079,
+              "model": {
+                "name": "Camry Vi (Xv40)"
+              },
+              "modification": {
+                "name": "3.5 At (277 Л.с.)"
+              },
+              "engine": {
+                "volume": 3500
+              },
+              "year": 2008
+            }
+          ],
+          "count": 1
+        }
+      },
+      "uid": "report_type_uid@domain",
+      "name": "NONAME",
+      "comment": "Some comment",
+      "tags": "",
+      "created_at": "2017-08-09T14:50:41.288Z",
+      "created_by": "system",
+      "updated_at": "2017-08-09T14:53:07.350Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    }
+  ]
+}

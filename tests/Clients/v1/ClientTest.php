@@ -20,7 +20,6 @@ class ClientTest extends ClientTestCase
 
         $keys = [
             'api',
-            'client',
             'http_client',
             'is_test',
             'use_api_version',

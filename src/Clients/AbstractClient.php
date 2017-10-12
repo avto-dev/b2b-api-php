@@ -49,18 +49,6 @@ abstract class AbstractClient implements ClientInterface
         'use_api_version' => null,
 
         /*
-         * Настройки клиента
-         */
-        'client'          => [
-            // Домен пользователя
-            'domain'   => null,
-            // Имя пользователя
-            'username' => null,
-            // Пароль пользователя
-            'password' => null,
-        ],
-
-        /*
          * Настройки http-клиентов
          */
         'http_client'     => [

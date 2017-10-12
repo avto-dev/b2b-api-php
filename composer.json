@@ -32,9 +32,6 @@
       "AvtoDev\\B2BApi\\Tests\\": "tests"
     }
   },
-  "suggest": {
-    "hirak/prestissimo": "composer parallel install plugin"
-  },
   "support": {
     "issues": "https://github.com/avto-dev/b2b-api-php/issues",
     "source": "https://github.com/avto-dev/b2b-api-php"

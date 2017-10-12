@@ -79,8 +79,7 @@ class UserCommandsGroup extends AbstractApiCommandsGroup
     }
 
     /**
-     * Проверка доступности квоты по UID-у типа отчета. Если UID типа отчета передан не был, то будет взят UID типа
-     * отчета "по умолчанию" из конфигурации.
+     * Проверка доступности квоты по UID-у типа отчета.
      *
      * @param string $auth_token      Токен безопасности
      * @param string $report_type_uid UID типа отчета

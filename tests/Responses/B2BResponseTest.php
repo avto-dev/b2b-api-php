@@ -63,6 +63,16 @@ class B2BResponseTest extends AbstractUnitTestCase
     }
 
     /**
+     * Тест метода `getRequestDuration()`.
+     *
+     * @return void
+     */
+    public function testGetRequestDuration()
+    {
+        $this->assertTrue(is_float($this->response->getRequestDuration()));
+    }
+
+    /**
      * Тест метода `getState()`.
      *
      * @return void

@@ -24,6 +24,13 @@ class B2BResponse extends AbstractResponse implements Countable
     protected $data;
 
     /**
+     * Продолжительность запроса для получения данного ответа (в секундах).
+     *
+     * @var float
+     */
+    protected $request_duration = 0.0;
+
+    /**
      * {@inheritdoc}
      */
     public function __construct($input = null)
@@ -31,6 +38,21 @@ class B2BResponse extends AbstractResponse implements Countable
         parent::__construct($input);
 
         $this->data = new DataCollection(isset($this->raw['data']) ? $this->raw['data'] : null);
+
+        // Если есть данные о времени исполнения запроса (ищем по фиксированному ключу)
+        if (is_array($input) && isset($input[static::REQUEST_DURATION_KEY_NAME])) {
+            $this->request_duration = (float) $input[static::REQUEST_DURATION_KEY_NAME];
+        }
+    }
+
+    /**
+     * Возвращает время выполнения запроса непосредственно к сервису B2B.
+     *
+     * @return float
+     */
+    public function getRequestDuration()
+    {
+        return $this->request_duration;
     }
 
     /**

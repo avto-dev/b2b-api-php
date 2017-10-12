@@ -6,6 +6,7 @@ use Exception;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use AvtoDev\B2BApi\Responses\ResponseInterface as B2BApiResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
 use AvtoDev\B2BApi\HttpClients\GuzzleHttpClient;
@@ -147,10 +148,16 @@ abstract class AbstractClient implements ClientInterface
         $uri     = $this->getApiRequestUri($api_path);
 
         try {
+            // Временная метка начала осуществления запроса
+            $now = microtime(true);
+
             // Если в метод был передан объект-ответ, который надо использовать как ответ от B2B API - то используем его
             $response = ($test_response instanceof ResponseInterface)
                 ? clone $test_response
                 : $this->http_client->request($http_method, $uri, $data, $headers);
+
+            // Считаем время исполнения запроса (в секундах с дробной частью)
+            $duration = round((microtime(true) - $now), 4);
 
             // Это условие, в основном, сделано для тестов
             if ($test_response instanceof ResponseInterface && ($code = $test_response->getStatusCode() >= 400)) {
@@ -164,7 +171,10 @@ abstract class AbstractClient implements ClientInterface
             $response_array = json_decode($content = $response->getBody()->getContents(), true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
-                return $response_array;
+                return array_replace($response_array, [
+                    // Добавляем время исполнения запроса в ответ
+                    B2BApiResponseInterface::REQUEST_DURATION_KEY_NAME => $duration,
+                ]);
             } else {
                 throw new B2BApiException(sprintf('Invalid JSON string received: "%s"', $content));
             }

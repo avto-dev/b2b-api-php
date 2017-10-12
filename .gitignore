@@ -1,0 +1,14 @@
+# Environment deps.
+/tests/env.php
+
+# Composer
+/composer.lock
+
+# Vendors
+/vendor
+
+# Temp dirs & trash
+/temp
+/tmp
+/*.tmp
+/coverage

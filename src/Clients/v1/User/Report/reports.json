@@ -1,0 +1,394 @@
+{
+  "state": "ok",
+  "size": 10,
+  "total": 1208,
+  "stamp": "2017-08-09T19:50:14.410Z",
+  "data": [
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "JTJHY00W004017841",
+      "query": {
+        "type": "VIN",
+        "body": "JTJHY00W004017841"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-22T12:48:48.574Z",
+      "created_by": "system",
+      "updated_at": "2017-06-22T12:48:48.574Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "Е841ХК77",
+      "query": {
+        "type": "VIN",
+        "body": "Е841ХК77"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-07-10T13:01:56.103Z",
+      "created_by": "system",
+      "updated_at": "2017-07-10T13:01:56.103Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "А234АА77",
+      "query": {
+        "type": "GRZ",
+        "body": "А234АА77"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-22T13:04:46.478Z",
+      "created_by": "system",
+      "updated_at": "2017-06-22T13:04:46.478Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "А407СХ174",
+      "query": {
+        "type": "GRZ",
+        "body": "А407СХ174"
+      },
+      "progress_ok": 1,
+      "progress_wait": 0,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "OK"
+          }
+        ]
+      },
+      "content": {
+        "identifiers": {
+          "vehicle": {
+            "vin": "X7LHSRDJA49712950",
+            "reg_num": "А407СХ174"
+          }
+        },
+        "tech_data": {
+          "brand": {
+            "name": {
+              "original": "РЕНОДАСТЕР"
+            }
+          },
+          "year": 2013,
+          "engine": {
+            "fuel": {
+              "type": "Бензиновый"
+            },
+            "volume": 1998,
+            "power": {
+              "hp": 135
+            }
+          },
+          "weight": {
+            "netto": 1299,
+            "max": 1799
+          },
+          "wheel": {
+            "position": "LEFT"
+          }
+        },
+        "additional_info": {
+          "vehicle": {
+            "category": {
+              "code": "B"
+            }
+          }
+        }
+      },
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-14T12:33:21.168Z",
+      "created_by": "system",
+      "updated_at": "2017-06-14T12:33:21.168Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "NLAFD75308W0713412",
+      "query": {
+        "type": "VIN",
+        "body": "NLAFD75308W0713412"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-13T09:39:52.888Z",
+      "created_by": "system",
+      "updated_at": "2017-06-13T09:47:35.862Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "123",
+      "query": {
+        "type": "vin",
+        "body": "321"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-13T12:16:43.602Z",
+      "created_by": "system",
+      "updated_at": "2017-06-13T12:16:43.602Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "NLAFD75308W071341",
+      "query": {
+        "type": "vin",
+        "body": "NLAFD75308W071341"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-13T12:17:16.786Z",
+      "created_by": "system",
+      "updated_at": "2017-06-13T12:17:16.786Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "А364АА77",
+      "query": {
+        "type": "GRZ",
+        "body": "А364АА77"
+      },
+      "progress_ok": 1,
+      "progress_wait": 0,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "OK"
+          }
+        ]
+      },
+      "content": {
+        "identifiers": {
+          "vehicle": {
+            "reg_num": "А364АА77",
+            "vin": "WDC1631131A454727"
+          }
+        },
+        "tech_data": {
+          "brand": {
+            "name": {
+              "original": "МЕРСЕДЕС-БЕНЦ МL 270 СDI"
+            }
+          },
+          "year": 2003,
+          "engine": {
+            "fuel": {
+              "type": "Дизельный"
+            },
+            "volume": 2870,
+            "power": {
+              "hp": 163.2
+            }
+          },
+          "weight": {
+            "netto": 2215,
+            "max": 2870
+          },
+          "wheel": {
+            "position": "LEFT"
+          }
+        },
+        "additional_info": {
+          "vehicle": {
+            "category": {
+              "code": "B"
+            }
+          }
+        }
+      },
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-22T18:55:10.705Z",
+      "created_by": "system",
+      "updated_at": "2017-06-22T18:55:10.705Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "А231АА77",
+      "query": {
+        "type": "VIN",
+        "body": "А231АА77"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-07-10T14:07:13.066Z",
+      "created_by": "system",
+      "updated_at": "2017-07-10T14:07:13.066Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    },
+    {
+      "domain_uid": "%domain%",
+      "report_type_uid": "report_type_uid@%domain%",
+      "vehicle_id": "qwqweqwe",
+      "query": {
+        "type": "VIN",
+        "body": "qwqweqwe"
+      },
+      "progress_ok": 0,
+      "progress_wait": 1,
+      "progress_error": 0,
+      "state": {
+        "sources": [
+          {
+            "_id": "base",
+            "state": "PROGRESS"
+          }
+        ]
+      },
+      "content": {},
+      "uid": "report_uid_UID_HASH_HERE@%domain%",
+      "name": "NONAME",
+      "comment": "",
+      "tags": "",
+      "created_at": "2017-06-14T06:01:13.318Z",
+      "created_by": "system",
+      "updated_at": "2017-06-14T06:01:13.318Z",
+      "updated_by": "system",
+      "active_from": "1900-01-01T00:00:00.000Z",
+      "active_to": "3000-01-01T00:00:00.000Z"
+    }
+  ]
+}

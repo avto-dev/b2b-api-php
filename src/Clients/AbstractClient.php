@@ -6,13 +6,13 @@ use Exception;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use AvtoDev\B2BApi\Responses\ResponseInterface as B2BApiResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
 use AvtoDev\B2BApi\HttpClients\GuzzleHttpClient;
 use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 use AvtoDev\B2BApi\Traits\StackValuesDotAccessible;
 use AvtoDev\B2BApi\Exceptions\B2BApiUnsupportedHttpClientException;
+use AvtoDev\B2BApi\Responses\ResponseInterface as B2BApiResponseInterface;
 
 /**
  * Class AbstractClient.

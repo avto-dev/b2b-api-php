@@ -4,6 +4,14 @@
 
 # PHP-клиент для работы с B2B API
 
+![Packagist](https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=30)
+[![Build Status](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/build-status/master)
+![StyleCI](https://styleci.io/repos/106674678/shield?style=flat-square&maxAge=30)
+[![Code Coverage](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
+![GitHub issues](https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=30)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254/mini.png)](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254)
+
 Данный пакет является реализацией клиента для работы с B2B API проекта "AvtoDev", значительно упрощающим работу с последним, предоставляя разработчику внятное API.
 
 Все API-методы сопровождаются соответствующим `@phpdoc`.

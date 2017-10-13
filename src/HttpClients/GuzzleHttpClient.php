@@ -61,9 +61,9 @@ class GuzzleHttpClient extends AbstractHttpClient
      */
     protected function endsWith($haystack, $needle)
     {
-        $length = strlen($needle);
+        $length = mb_strlen($needle);
 
-        return $length === 0 || (substr($haystack, -$length) === $needle);
+        return $length === 0 || (mb_substr($haystack, -$length) === $needle);
     }
 
     /**

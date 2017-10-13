@@ -125,7 +125,7 @@ abstract class AbstractClient implements ClientInterface
     {
         return $this->http_client;
     }
-    
+
     /**
      * {@inheritdoc}
      */

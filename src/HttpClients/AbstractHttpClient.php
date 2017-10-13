@@ -142,14 +142,14 @@ abstract class AbstractHttpClient
      * метода.
      *
      * @param array $callbacks_stack
-     * @param array $arguments
+     * @param array ...$arguments
      */
-    protected function executeCallbacks(array &$callbacks_stack, array $arguments = [])
+    protected function executeCallbacks(array &$callbacks_stack, ...$arguments)
     {
         if (! empty($callbacks_stack)) {
             foreach ($callbacks_stack as &$callback) {
                 if (is_callable($callback)) {
-                    call_user_func_array($callback, $arguments);
+                    call_user_func_array($callback, ...$arguments);
                 }
             }
         }

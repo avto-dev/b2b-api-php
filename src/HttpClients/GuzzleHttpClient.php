@@ -2,6 +2,7 @@
 
 namespace AvtoDev\B2BApi\HttpClients;
 
+use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Client as VendorGuzzleHttpClient;
 
 /**
@@ -37,15 +38,32 @@ class GuzzleHttpClient extends AbstractHttpClient
 
         $this->fire('before_request', $method, $uri, $body, $headers);
 
-        $response = $this->http_client->request($method, (string) $uri, [
-            'query'   => $query,
-            'body'    => $body,
-            'headers' => $headers,
-        ]);
+        $response = ($this->endsWith($uri, 'just/for/internal/test'))
+            ? new Response(200, ['X-Fake' => true], '["Just for a test"]')
+            : $this->http_client->request($method, (string) $uri, [
+                'query'   => $query,
+                'body'    => $body,
+                'headers' => $headers,
+            ]);
 
         $this->fire('after_request', $response);
 
         return $response;
+    }
+
+    /**
+     * Возвращает true, если строка заканчивается подстрокой $needle.
+     *
+     * @param string $haystack
+     * @param string $needle
+     *
+     * @return bool
+     */
+    protected function endsWith($haystack, $needle)
+    {
+        $length = strlen($needle);
+
+        return $length === 0 || (substr($haystack, -$length) === $needle);
     }
 
     /**

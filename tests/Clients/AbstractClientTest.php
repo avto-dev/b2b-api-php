@@ -109,6 +109,20 @@ class AbstractClientTest extends AbstractClientTestCase
     }
 
     /**
+     * Выполняем псевдо-настоящий запрос.
+     *
+     * @return void
+     */
+    public function testPseudoRealRequest()
+    {
+        $this->assertIsArray(
+            $this->client->apiRequest('get', 'just/for/internal/test', [
+                'some' => 'value',
+            ])
+        );
+    }
+
+    /**
      * Тест метода `apiRequest()` с некорректным json-ом в ответе.
      *
      * @return void

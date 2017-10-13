@@ -11,6 +11,7 @@ use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportData;
 use AvtoDev\B2BApi\Responses\DataTypes\User\UserInfoData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 use AvtoDev\B2BApi\Responses\DataTypes\ReportType\ReportTypeData;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class SomeFeatureTestsTest.
@@ -102,6 +103,34 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
         unset($this->report_type_uid);
 
         parent::tearDown();
+    }
+
+    /**
+     * Тест событий HTTP-клиента.
+     *
+     * @return void
+     */
+    public function testHttpClientsEvents()
+    {
+        $counter = 0;
+
+        $this->client->httpClient()->on('before_request', function ($method, $uri, $body, $headers) use (&$counter) {
+            $this->assertEquals('get', strtolower($method));
+            $this->assertContains('ping', $uri);
+            $this->assertIsArray($headers);
+
+            ++$counter;
+        });
+
+        $this->client->httpClient()->on('after_request', function ($response) use (&$counter) {
+            $this->assertInstanceOf(ResponseInterface::class, $response);
+
+            ++$counter;
+        });
+
+        $this->client->dev()->ping();
+
+        $this->assertEquals(2, $counter);
     }
 
     /**

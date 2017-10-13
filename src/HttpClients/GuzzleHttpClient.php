@@ -27,18 +27,25 @@ class GuzzleHttpClient extends AbstractHttpClient
 
         // Если использует GET-запрос, то передаваемые данные клиент вставит в сам запрос. Если же POST или PUT - то
         // данные будут переданы в теле самого запроса
-        $query = $method === 'GET' ? $data : null;
-        $body  = in_array($method, ['PUT', 'POST', 'DELETE']) ? json_encode($data) : null;
+        $query   = $method === 'GET' ? $data : null;
+        $body    = in_array($method, ['PUT', 'POST', 'DELETE']) ? json_encode($data) : null;
+        $headers = array_replace_recursive([
+            'Content-Type' => 'application/json',
+            'Accept'       => 'application/json',
+            'User-Agent'   => $this->getUserAgentName(),
+        ], $headers);
 
-        return $this->http_client->request($method, (string) $uri, [
+        $this->fire('before_request', $method, $uri, $body, $headers);
+
+        $response = $this->http_client->request($method, (string) $uri, [
             'query'   => $query,
             'body'    => $body,
-            'headers' => array_replace_recursive([
-                'Content-Type' => 'application/json',
-                'Accept'       => 'application/json',
-                'User-Agent'   => $this->getUserAgentName(),
-            ], $headers),
+            'headers' => $headers,
         ]);
+
+        $this->fire('after_request', $response);
+
+        return $response;
     }
 
     /**

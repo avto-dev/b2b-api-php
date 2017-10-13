@@ -66,7 +66,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
 
         $this->assertInstanceOf(
             GuzzleHttpClientMock::class,
-            $this->http_client->addAfterRequestCallback(
+            $this->http_client->on('after_request',
                 function ($response) use (&$counter) {
                     $this->assertInstanceOf(ResponseInterface::class, $response);
                     ++$counter;
@@ -74,9 +74,17 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
             )
         );
 
+        // В новый стек
         $this->assertInstanceOf(
             GuzzleHttpClientMock::class,
-            $this->http_client->addBeforeRequestCallback(
+            $this->http_client->on('some', function () use (&$counter) {
+                --$counter; // Не должно само произойти
+            })
+        );
+
+        $this->assertInstanceOf(
+            GuzzleHttpClientMock::class,
+            $this->http_client->on('before_request',
                 function (&$method, &$uri, array &$data = [], array &$options = []) use (&$counter) {
                     $this->assertEquals($method, 'get');
                     $this->assertEquals($uri, 'http://some.site');
@@ -90,7 +98,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
 
         $this->assertInstanceOf(
             GuzzleHttpClientMock::class,
-            $this->http_client->addBeforeRequestCallback(
+            $this->http_client->on('before_request',
                 function (&$method, &$uri) use (&$counter) {
                     $this->assertEquals($method, 'get');
                     $this->assertEquals($uri, 'http://some.site/bla_bla');
@@ -102,6 +110,10 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
         $this->http_client->request('get', 'http://some.site', ['foo' => 'bar'], ['a' => 'b']);
 
         $this->assertEquals(3, $counter);
+
+        // И только теперь событие должно сработать
+        $this->http_client->fire('some');
+        $this->assertEquals(2, $counter);
     }
 
     /**

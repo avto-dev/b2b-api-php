@@ -148,9 +148,13 @@ abstract class AbstractClient implements ClientInterface
             $now = microtime(true);
 
             // Если в метод был передан объект-ответ, который надо использовать как ответ от B2B API - то используем его
-            $response = ($test_response instanceof ResponseInterface)
-                ? clone $test_response
-                : $this->http_client->request($http_method, $uri, $data, $headers);
+            if ($test_response instanceof ResponseInterface) {
+                $this->httpClient()->fire('before_request', $http_method, $uri, $data, $headers);
+                $response = clone $test_response;
+                $this->httpClient()->fire('after_request', $response);
+            } else {
+                $response = $this->http_client->request($http_method, $uri, $data, $headers);
+            }
 
             // Считаем время исполнения запроса (в секундах с дробной частью)
             $duration = round((microtime(true) - $now), 4);

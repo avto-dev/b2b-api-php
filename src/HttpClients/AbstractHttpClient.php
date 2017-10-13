@@ -28,18 +28,14 @@ abstract class AbstractHttpClient
     protected $http_client;
 
     /**
-     * Пользовательские callback-функции, выполняемые ПЕРЕД осуществлением запроса.
+     * Стек callback-функций.
      *
-     * @var Closure[]
+     * @var array[]
      */
-    protected $before_request_callbacks = [];
-
-    /**
-     * Пользовательские callback-функции, выполняемые ПОСЛЕ осуществления запроса.
-     *
-     * @var Closure[]
-     */
-    protected $after_request_callbacks = [];
+    protected $callbacks = [
+        'before_request' => [],
+        'after_request'  => [],
+    ];
 
     /**
      * AbstractHttpClient constructor.
@@ -54,42 +50,42 @@ abstract class AbstractHttpClient
     }
 
     /**
-     * Добавляет пользовательский callback-метод в стек callback-функций, выполняемых ПЕРЕД осуществлением реального
-     * запроса по протоколу HTTP. При их вызове в качестве аргументов прилетят:
-     *  - string $method  HTTP метод
-     *  - string $uri     URI строка
-     *  - array  $data    Данные, передаваемые в запросе
-     *  - array  $headers Заголовки запроса.
+     * Добавляет именованное событие в стек.
      *
-     * Внимание! Объекты передаются по ссылке, что позволяем произвести их модификацию "на лету".
-     *
+     * @param string  $event_type По умолчанию: 'before_request', 'after_request'
      * @param Closure $callback
      *
      * @return static|self
      */
-    public function addBeforeRequestCallback(Closure $callback)
+    public function on($event_type, Closure $callback)
     {
-        array_push($this->before_request_callbacks, $callback);
+        $event_type = (string) $event_type;
+
+        // Инициализируем стек
+        if (! isset($this->callbacks[$event_type])) {
+            $this->callbacks[$event_type] = [];
+        }
+
+        array_push($this->callbacks[$event_type], $callback);
 
         return $this;
     }
 
     /**
-     * Добавляет пользовательский callback-метод в стек callback-функций, выполняемых ПОСЛЕ осуществления реального
-     * запроса по протоколу HTTP. При их вызове в качестве аргумента прилетит:
-     *  - ResponseInterface|mixed $response Объект-ответ HTTP клиента.
+     * Выполняет все события, что были помещены в именованный стек.
      *
-     * Внимание! Объект передается по ссылке, что позволяем произвести его модификацию "на лету".
-     *
-     * @param Closure $callback
-     *
-     * @return static|self
+     * @param string $event_type  По умолчанию: 'before_request', 'after_request'
+     * @param array  ...$arguments
      */
-    public function addAfterRequestCallback(Closure $callback)
+    public function fire($event_type, ...$arguments)
     {
-        array_push($this->after_request_callbacks, $callback);
+        $event_type = (string) $event_type;
 
-        return $this;
+        if (isset($this->callbacks[$event_type])) {
+            foreach ($this->callbacks[$event_type] as &$callback) {
+                $callback(...$arguments);
+            }
+        }
     }
 
     /**
@@ -97,9 +93,9 @@ abstract class AbstractHttpClient
      *
      * ВНИМАНИЕ! При реализации данного метода следует не забыть перед и после выполнения *реального* запроса вызвать:
      * <code>
-     *   $this->executeCallbacks($this->before_request_callbacks, [&$method, &$uri, &$data, &$headers]);
+     *   $this->fire('before_request', $method, $uri, $data, $headers);
      *   // ... здесь осуществляется сам вызов
-     *   $this->executeCallbacks($this->after_request_callbacks, [$response]);
+     *   $this->fire('after_request', $response);
      * </code>
      *
      * @param string $method  HTTP метод

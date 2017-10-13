@@ -26,16 +26,18 @@ class GuzzleHttpClientMock extends AbstractHttpClient
      */
     public function request($method, $uri, array $data = [], array $headers = [])
     {
-        $this->executeCallbacks($this->before_request_callbacks, [&$method, &$uri, &$data, &$headers]);
-
         $mock     = new MockHandler([
             new Response(200, ['X-Fake' => true]),
         ]);
         $handler  = HandlerStack::create($mock);
         $client   = new Client(['handler' => $handler]);
+
+
+        $this->fire('before_request', $method, $uri, $data, $headers);
+
         $response = $client->request($method, $uri, ['query' => $data]);
 
-        $this->executeCallbacks($this->after_request_callbacks, [$response]);
+        $this->fire('after_request', $response);
 
         return $response;
     }

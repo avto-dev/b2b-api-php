@@ -67,7 +67,7 @@ abstract class AbstractHttpClient
      *
      * @return static|self
      */
-    public function addBeforeRequestCallback(Closure &$callback)
+    public function addBeforeRequestCallback(Closure $callback)
     {
         array_push($this->before_request_callbacks, $callback);
 
@@ -85,7 +85,7 @@ abstract class AbstractHttpClient
      *
      * @return static|self
      */
-    public function addAfterRequestCallback(Closure &$callback)
+    public function addAfterRequestCallback(Closure $callback)
     {
         array_push($this->after_request_callbacks, $callback);
 

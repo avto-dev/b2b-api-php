@@ -5,13 +5,13 @@ namespace AvtoDev\B2BApi\Tests;
 use Carbon\Carbon;
 use AvtoDev\B2BApi\Tokens\AuthToken;
 use AvtoDev\B2BApi\Clients\v1\Client;
+use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\References\QueryTypes;
 use AvtoDev\B2BApi\Responses\DataTypes\User\BalanceData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportData;
 use AvtoDev\B2BApi\Responses\DataTypes\User\UserInfoData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 use AvtoDev\B2BApi\Responses\DataTypes\ReportType\ReportTypeData;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class SomeFeatureTestsTest.
@@ -115,7 +115,7 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
         $counter = 0;
 
         $this->client->httpClient()->on('before_request', function ($method, $uri, $body, $headers) use (&$counter) {
-            $this->assertEquals('get', strtolower($method));
+            $this->assertEquals('get', mb_strtolower($method));
             $this->assertContains('ping', $uri);
             $this->assertIsArray($headers);
 

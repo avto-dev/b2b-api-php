@@ -32,7 +32,6 @@ class GuzzleHttpClientMock extends AbstractHttpClient
         $handler  = HandlerStack::create($mock);
         $client   = new Client(['handler' => $handler]);
 
-
         $this->fire('before_request', $method, $uri, $data, $headers);
 
         $response = $client->request($method, $uri, ['query' => $data]);

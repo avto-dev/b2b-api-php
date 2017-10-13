@@ -74,7 +74,7 @@ abstract class AbstractHttpClient
     /**
      * Выполняет все события, что были помещены в именованный стек.
      *
-     * @param string $event_type  По умолчанию: 'before_request', 'after_request'
+     * @param string $event_type   По умолчанию: 'before_request', 'after_request'
      * @param array  ...$arguments
      */
     public function fire($event_type, ...$arguments)

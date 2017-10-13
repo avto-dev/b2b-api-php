@@ -4,12 +4,12 @@
 
 # PHP-клиент для работы с B2B API
 
-![Packagist](https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=30)
+![Packagist](https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat&maxAge=30)
 [![Build Status](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/build-status/master)
-![StyleCI](https://styleci.io/repos/106674678/shield?style=flat-square&maxAge=30)
+![StyleCI](https://styleci.io/repos/106674678/shield?style=flat&maxAge=30)
 [![Code Coverage](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
-![GitHub issues](https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=30)
+![GitHub issues](https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat&maxAge=30)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254/mini.png)](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254)
 
 Данный пакет является реализацией клиента для работы с сервисом B2B API, значительно упрощающим работу с последним, предоставляя разработчику внятное API.
@@ -37,7 +37,7 @@ $ composer require avto-dev/b2b-api-php
 [HTTP-клиент][http_client] | Реализует методы осуществления запросов по протоколу `http` *(используется по умолчанию его реализация [`guzzle`][http_client_guzzle])*
 [Справочники][references] | Содержат основные значения *(такие как типы запросов идентификаторов и так далее)*
 [Генераторы токенов][tokens] | Производят генерацию токенов *(авторизации на сервисе B2B API - в частности)*
-[Классы типов данных][data_types] | К ним которым автоматически приводятся возвращаемые от сервиса данные *(которые реализуют дополнительные методы-акцессоры)*, если это возможно. В противном случае всегда возвращается объект типа [`UnknownDataType`][UnknownDataType];
+[Классы типов данных][data_types] | К которым автоматически приводятся возвращаемые от сервиса данные *(которые реализуют дополнительные методы-акцессоры)*, если это возможно. В противном случае всегда возвращается объект типа [`UnknownDataType`][UnknownDataType];
 
 Каждый компонент в той или иной мере автономен, и может использоваться отдельно от других при необходимости.
 

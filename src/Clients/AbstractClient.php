@@ -121,6 +121,14 @@ abstract class AbstractClient implements ClientInterface
     /**
      * {@inheritdoc}
      */
+    public function httpClient()
+    {
+        return $this->http_client;
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
     public function getAvailableApiVersions()
     {
         return array_keys($this->getConfigValue('api.versions'));

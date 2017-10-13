@@ -4,6 +4,7 @@ namespace AvtoDev\B2BApi\Clients;
 
 use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
+use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 
 /**
  * Interface ClientInterface.
@@ -33,6 +34,13 @@ interface ClientInterface
      * @return string
      */
     public function getClientVersion();
+
+    /**
+     * Возвращает инстанс HTTP-клиента.
+     *
+     * @return AbstractHttpClient
+     */
+    public function httpClient();
 
     /**
      * Возвращает true только в том случае, если в конфигурации был указан флаг 'is_test'.

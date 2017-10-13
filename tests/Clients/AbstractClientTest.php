@@ -4,6 +4,7 @@ namespace AvtoDev\B2BApi\Tests\Clients;
 
 use GuzzleHttp\Psr7\Response;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
+use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 use AvtoDev\B2BApi\Exceptions\B2BApiUnsupportedHttpClientException;
 
@@ -58,6 +59,16 @@ class AbstractClientTest extends AbstractClientTestCase
         new AbstractClientMock([
             'use_http_client' => 'fuck you',
         ]);
+    }
+
+    /**
+     * Тест метода `httpClient()`.
+     *
+     * @return void
+     */
+    public function testHttpClient()
+    {
+        $this->assertInstanceOf(AbstractHttpClient::class, $this->client->httpClient());
     }
 
     /**

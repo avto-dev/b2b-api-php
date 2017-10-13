@@ -132,22 +132,4 @@ abstract class AbstractHttpClient
      * @return mixed
      */
     abstract protected function httpClientFactory(...$arguments);
-
-    /**
-     * Поочередно выполняет callback-функции из указанного стека передавая им аргументы, указанные во втором аргументе
-     * метода.
-     *
-     * @param array $callbacks_stack
-     * @param array ...$arguments
-     */
-    protected function executeCallbacks(array &$callbacks_stack, ...$arguments)
-    {
-        if (! empty($callbacks_stack)) {
-            foreach ($callbacks_stack as &$callback) {
-                if (is_callable($callback)) {
-                    call_user_func_array($callback, ...$arguments);
-                }
-            }
-        }
-    }
 }

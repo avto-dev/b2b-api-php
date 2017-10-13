@@ -2,9 +2,9 @@
 
 namespace AvtoDev\B2BApi\Tests;
 
+use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 use AvtoDev\B2BApi\Tests\HttpClients\Mocks\GuzzleHttpClientMock;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class AbstractHttpClientTest.
@@ -20,6 +20,28 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
      * @var AbstractClientMock
      */
     protected $api_client;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->api_client  = new AbstractClientMock;
+        $this->http_client = new GuzzleHttpClientMock($this->api_client);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function tearDown()
+    {
+        unset($this->http_client);
+        unset($this->api_client);
+
+        parent::tearDown();
+    }
 
     /**
      * Тест метода `httpClientFactory()`.
@@ -94,27 +116,5 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
             . ' PHP/' . PHP_VERSION,
             $this->http_client->getUserAgentName()
         );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->api_client  = new AbstractClientMock;
-        $this->http_client = new GuzzleHttpClientMock($this->api_client);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function tearDown()
-    {
-        unset($this->http_client);
-        unset($this->api_client);
-
-        parent::tearDown();
     }
 }

@@ -69,7 +69,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
             $this->http_client->on('after_request',
                 function ($response) use (&$counter) {
                     $this->assertInstanceOf(ResponseInterface::class, $response);
-                    ++$counter;
+                    $counter++;
                 }
             )
         );
@@ -78,7 +78,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
         $this->assertInstanceOf(
             GuzzleHttpClientMock::class,
             $this->http_client->on('some', function () use (&$counter) {
-                --$counter; // Не должно само произойти
+                $counter--; // Не должно само произойти
             })
         );
 
@@ -91,7 +91,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
                     $this->assertEquals($data, ['foo' => 'bar']);
                     $this->assertEquals($options, ['a' => 'b']);
                     $uri .= '/bla_bla'; // Так как прилетают по ссылке, то callback-и могут изменять данные
-                    ++$counter;
+                    $counter++;
                 }
             )
         );
@@ -102,7 +102,7 @@ class AbstractHttpClientTest extends AbstractUnitTestCase
                 function (&$method, &$uri) use (&$counter) {
                     $this->assertEquals($method, 'get');
                     $this->assertEquals($uri, 'http://some.site/bla_bla');
-                    ++$counter;
+                    $counter++;
                 }
             )
         );

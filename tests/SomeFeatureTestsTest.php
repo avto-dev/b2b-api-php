@@ -119,13 +119,13 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
             $this->assertContains('ping', $uri);
             $this->assertIsArray($headers);
 
-            ++$counter;
+            $counter++;
         });
 
         $this->client->httpClient()->on('after_request', function ($response) use (&$counter) {
             $this->assertInstanceOf(ResponseInterface::class, $response);
 
-            ++$counter;
+            $counter++;
         });
 
         $this->client->dev()->ping();

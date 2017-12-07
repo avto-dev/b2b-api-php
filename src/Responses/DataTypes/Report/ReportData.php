@@ -67,15 +67,15 @@ class ReportData extends AbstractDataType
 
                 // Считаем счётчики сразу-же
                 if ($report_source->isProgress()) {
-                    ++$this->sources_count_in_progress;
+                    $this->sources_count_in_progress++;
                 } elseif ($report_source->isError()) {
-                    ++$this->sources_count_with_errors;
+                    $this->sources_count_with_errors++;
                 } elseif ($report_source->isSuccess()) {
-                    ++$this->sources_count_success;
+                    $this->sources_count_success++;
                 }
 
                 if ($report_source->isCompleted()) {
-                    ++$this->sources_count_completed;
+                    $this->sources_count_completed++;
                 }
             }
         }

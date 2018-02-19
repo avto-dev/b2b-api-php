@@ -23,8 +23,8 @@
         "nesbot/carbon": "^1.22"
     },
     "require-dev": {
-        "phpunit/phpunit": "~5.7 || ^6.4",
-        "symfony/var-dumper": "^3.3"
+        "phpunit/phpunit": "~5.7 || ^6.4 || ~7.0",
+        "symfony/var-dumper": "~3.2 || ^4.0"
     },
     "autoload": {
         "psr-4": {
@@ -39,14 +39,15 @@
     "scripts": {
         "test": "./vendor/bin/phpunit --no-coverage"
     },
-    "config": {
-        "sort-packages": true
-    },
     "suggest": {
         "avto-dev/b2b-api-php-laravel": "Laravel package for a working with B2B API client."
     },
     "support": {
         "issues": "https://github.com/avto-dev/b2b-api-php/issues",
         "source": "https://github.com/avto-dev/b2b-api-php"
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true
 }

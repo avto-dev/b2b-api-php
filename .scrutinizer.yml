@@ -5,7 +5,7 @@ filter:
 checks:
   php:
     code_rating: true
-    duplication: false
+    duplication: true
 
 build:
   environment:
@@ -44,6 +44,17 @@ build:
     php71:
       environment:
         php: 7.1
+      tests:
+        override:
+          -
+            command: 'vendor/bin/phpunit --coverage-clover=clover-file'
+            coverage:
+              file: 'clover-file'
+              format: 'clover'
+
+    php72:
+      environment:
+        php: 7.2
       tests:
         override:
           -

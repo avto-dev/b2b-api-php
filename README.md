@@ -1,16 +1,17 @@
 <p align="center">
-  <img alt="logo" src="https://habrastorage.org/webt/59/df/45/59df45aa6c9cb971309988.png" width="70"  height="70" />
+  <img alt="logo" src="https://hsto.org/webt/59/df/45/59df45aa6c9cb971309988.png" width="70"  height="70" />
 </p>
 
 # PHP-клиент для работы с B2B API
 
-![Packagist](https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat&maxAge=30)
-[![Build Status](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/build.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/build-status/master)
-![StyleCI](https://styleci.io/repos/106674678/shield?style=flat&maxAge=30)
-[![Code Coverage](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master)
-![GitHub issues](https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat&maxAge=30)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254/mini.png)](https://insight.sensiolabs.com/projects/b52878bf-68dc-487c-adec-9ed67da79254)
+[![Version][badge_version]][link_packagist]
+[![Build Status][badge_build_status]][link_build_status]
+[![StyleCI][badge_styleci]][link_styleci]
+[![Coverage][badge_coverage]][link_coverage]
+[![Code Quality][badge_quality]][link_coverage]
+[![Issues][badge_issues]][link_issues]
+[![License][badge_license]][link_license]
+[![Downloads count][badge_downloads_count]][link_packagist]
 
 Данный пакет является реализацией клиента для работы с сервисом B2B API, значительно упрощающим работу с последним, предоставляя разработчику внятное API.
 
@@ -21,7 +22,7 @@
 Для установки данного пакета выполните в терминале следующую команду:
 
 ```shell
-$ composer require avto-dev/b2b-api-php "2.*"
+$ composer require avto-dev/b2b-api-php "^2.0.11"
 ```
 
 > Для этого необходим установленный `composer`. Для его установки перейдите по [данной ссылке][getcomposer].
@@ -195,14 +196,30 @@ $ composer update --dev
 $ php ./vendor/bin/phpunit --group=feature
 ```
 
-## Обратная связь и поддержка
+## Поддержка и развитие
 
-Если вы обнаружите какие-либо проблемы при работе с данным пакетом, либо у вас появятся пожелания или необходимость в каком-либо дополнительном методе то, пожалуйста, создайте соответствующий `issue` в данном репозитории.
+Если у вас возникли какие-либо проблемы по работе с данным пакетом, пожалуйста, создайте соответствующий `issue` в данном репозитории.
 
------
+Если вы способны самостоятельно реализовать тот функционал, что вам необходим - создайте PR с соответствующими изменениями. Крайне желательно сопровождать PR соответствующими тестами, фиксирующими работу ваших изменений. После проверки и принятия изменений будет опубликована новая минорная версия.
 
-Лицензия: **MIT**
+## Лицензирование
 
+Код данного пакета распространяется под лицензией [MIT][link_license].
+
+[badge_version]:https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
+[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
+[badge_license]:https://img.shields.io/packagist/l/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
+[badge_build_status]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/build.png?b=master
+[badge_styleci]:https://styleci.io/repos/106674678/shield
+[badge_coverage]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/coverage.png?b=master
+[badge_quality]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/quality-score.png?b=master
+[badge_issues]:https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
+[link_packagist]:https://packagist.org/packages/avto-dev/b2b-api-php
+[link_styleci]:https://styleci.io/repos/106674678/
+[link_license]:https://github.com/avto-dev/b2b-api-php/blob/master/LICENSE
+[link_build_status]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/build-status/master
+[link_coverage]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master
+[link_issues]:https://github.com/avto-dev/b2b-api-php/issues
 [client_v1]:./src/Clients/v1/Client.php
 [http_client]:./src/HttpClients/AbstractHttpClient.php
 [http_client_guzzle]:./src/HttpClients/GuzzleHttpClient.php

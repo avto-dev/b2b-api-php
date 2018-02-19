@@ -1,7 +1,7 @@
 # Environment deps.
 /tests/env.php
 
-# Composer
+# Composer lock file
 /composer.lock
 
 # IDEs
@@ -16,3 +16,4 @@
 /tmp
 /*.tmp
 /coverage
+/build

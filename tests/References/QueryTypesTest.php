@@ -24,6 +24,7 @@ class QueryTypesTest extends AbstractUnitTestCase
         $this->assertEquals('PTS', QueryTypes::QUERY_TYPE_PTS);
         $this->assertEquals('CHASSIS', QueryTypes::QUERY_TYPE_CHASSIS);
         $this->assertEquals('BODY', QueryTypes::QUERY_TYPE_BODY);
+        $this->assertEquals('DLN', QueryTypes::QUERY_TYPE_DRIVER_LICENSE_NUMBER);
     }
 
     /**
@@ -31,7 +32,7 @@ class QueryTypesTest extends AbstractUnitTestCase
      */
     public function testGetAll()
     {
-        foreach (['AUTODETECT', 'VIN', 'GRZ', 'STS', 'PTS', 'CHASSIS', 'BODY'] as $item) {
+        foreach (['AUTODETECT', 'VIN', 'GRZ', 'STS', 'PTS', 'CHASSIS', 'BODY', 'DLN'] as $item) {
             $this->assertContains($item, QueryTypes::getAll());
         }
     }

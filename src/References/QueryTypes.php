@@ -45,6 +45,11 @@ class QueryTypes extends AbstractReference
     const QUERY_TYPE_BODY = 'BODY';
 
     /**
+     * Номер водительского удостоверения (driver license number).
+     */
+    const QUERY_TYPE_DRIVER_LICENSE_NUMBER = 'DLN';
+
+    /**
      * {@inheritdoc}
      */
     public static function getAll()
@@ -57,6 +62,7 @@ class QueryTypes extends AbstractReference
             static::QUERY_TYPE_PTS,
             static::QUERY_TYPE_CHASSIS,
             static::QUERY_TYPE_BODY,
+            static::QUERY_TYPE_DRIVER_LICENSE_NUMBER,
         ];
     }
 }

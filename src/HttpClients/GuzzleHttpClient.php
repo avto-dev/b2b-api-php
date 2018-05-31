@@ -28,8 +28,12 @@ class GuzzleHttpClient extends AbstractHttpClient
 
         // Если использует GET-запрос, то передаваемые данные клиент вставит в сам запрос. Если же POST или PUT - то
         // данные будут переданы в теле самого запроса
-        $query   = $method === 'GET' ? $data : null;
-        $body    = in_array($method, ['PUT', 'POST', 'DELETE']) ? json_encode($data) : null;
+        $query   = $method === 'GET'
+            ? $data
+            : null;
+        $body    = in_array($method, ['PUT', 'POST', 'DELETE']) && $data !== []
+            ? json_encode($data)
+            : null;
         $headers = array_replace_recursive([
             'Content-Type' => 'application/json',
             'Accept'       => 'application/json',

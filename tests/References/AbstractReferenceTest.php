@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests;
 
 use AvtoDev\B2BApi\Tests\References\Mocks\ReferenceMock;
 
-/**
- * Class AbstractReferenceTest.
- */
 class AbstractReferenceTest extends AbstractUnitTestCase
 {
     /**

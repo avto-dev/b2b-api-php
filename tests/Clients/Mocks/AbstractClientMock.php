@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests\Clients\Mocks;
 
 use AvtoDev\B2BApi\Clients\AbstractClient;
 
-/**
- * Class AbstractClientMock.
- */
 class AbstractClientMock extends AbstractClient
 {
     /**

@@ -12,8 +12,6 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Clients\v1\Dev\User\UserCommandsGroup;
 
 /**
- * Class DevCommandsGroup.
- *
  * API команды группы Dev.
  */
 class DevCommandsGroup extends AbstractApiCommandsGroup
@@ -60,11 +58,11 @@ class DevCommandsGroup extends AbstractApiCommandsGroup
             ],
             [],
             $this->client->isTest() ? new Response(
-                200, $this->getTestingResponseHeaders(), json_encode([
+                200, $this->getTestingResponseHeaders(), \json_encode([
                 'value' => $test_value,
                 'in'    => 0,
-                'out'   => $ts = Carbon::now()->addSeconds(rand(0, 1))->getTimestamp(),
-                'delay' => $ts + rand(0, 2),
+                'out'   => $ts = Carbon::now()->addSeconds(mt_rand(0, 1))->getTimestamp(),
+                'delay' => $ts + mt_rand(0, 2),
             ])) : null
         ));
     }
@@ -84,10 +82,10 @@ class DevCommandsGroup extends AbstractApiCommandsGroup
      */
     public function token($username, $password, $is_hash = false, $date_from = null, $age = 60)
     {
-        if (is_string($username) && ! empty($username)) {
-            if (is_string($password) && ! empty($password)) {
+        if (\is_string($username) && ! empty($username)) {
+            if (\is_string($password) && ! empty($password)) {
                 // Типизируем значения
-                $date_from = is_null($date_from) ? Carbon::now() : $this->convertToCarbon($date_from);
+                $date_from = $date_from === null ? Carbon::now() : $this->convertToCarbon($date_from);
                 $is_hash   = boolval($is_hash);
                 $age       = intval($age, 10);
 
@@ -111,7 +109,7 @@ class DevCommandsGroup extends AbstractApiCommandsGroup
                     ],
                     [],
                     $this->client->isTest() ? new Response(
-                        200, $this->getTestingResponseHeaders(), json_encode([
+                        200, $this->getTestingResponseHeaders(), \json_encode([
                         'user'             => $username,
                         'pass'             => $password,
                         'pass_hash'        => base64_encode(md5($password, true)),
@@ -125,11 +123,11 @@ class DevCommandsGroup extends AbstractApiCommandsGroup
                         'header'           => $not_available,
                     ])) : null
                 ));
-            } else {
-                throw new B2BApiException('Invalid or empty password passed');
             }
-        } else {
-            throw new B2BApiException('Invalid or empty username passed');
+
+            throw new B2BApiException('Invalid or empty password passed');
         }
+
+        throw new B2BApiException('Invalid or empty username passed');
     }
 }

@@ -13,9 +13,6 @@ use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithCreated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUpdated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithDomainUid;
 
-/**
- * Class ReportTypeData.
- */
 class ReportTypeData extends AbstractDataType
 {
     use WithState, WithDomainUid, WithUid, WithName, WithComment, WithTags, WithCreated, WithUpdated, WithActive;
@@ -72,8 +69,8 @@ class ReportTypeData extends AbstractDataType
      */
     public function getSourcesNamesList()
     {
-        return is_array($value = $this->getContentValue('content.sources', null))
-            ? array_unique(array_filter($value))
+        return \is_array($value = $this->getContentValue('content.sources', null))
+            ? \array_unique(array_filter($value))
             : null;
     }
 
@@ -84,8 +81,8 @@ class ReportTypeData extends AbstractDataType
      */
     public function getFieldsList()
     {
-        return is_array($value = $this->getContentValue('content.fields', null))
-            ? array_unique(array_filter($value))
+        return \is_array($value = $this->getContentValue('content.fields', null))
+            ? \array_unique(array_filter($value))
             : null;
     }
 }

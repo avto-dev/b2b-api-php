@@ -11,8 +11,6 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Clients\v1\User\Report\ReportCommandsGroup;
 
 /**
- * Class UserCommandsGroup.
- *
  * API команды группы User.
  */
 class UserCommandsGroup extends AbstractApiCommandsGroup

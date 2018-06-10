@@ -8,9 +8,6 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractApiCommandsGroupMock;
 
-/**
- * Class AbstractApiCommandsGroupTest.
- */
 class AbstractApiCommandsGroupTest extends AbstractUnitTestCase
 {
     /**

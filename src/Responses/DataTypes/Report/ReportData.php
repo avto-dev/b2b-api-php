@@ -11,9 +11,6 @@ use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithComment;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithCreated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUpdated;
 
-/**
- * Class ReportData.
- */
 class ReportData extends AbstractDataType
 {
     use WithActive, WithCreated, WithUpdated, WithUid, WithComment, WithTags, WithName;
@@ -61,9 +58,9 @@ class ReportData extends AbstractDataType
         parent::__construct($content);
 
         // Формируем стек данных об источниках
-        if (is_array($sources = $this->getContentValue('state.sources', null))) {
+        if (\is_array($sources = $this->getContentValue('state.sources', null))) {
             foreach ($sources as $source) {
-                array_push($this->sources, $report_source = new ReportSource($source));
+                $this->sources[] = $report_source = new ReportSource($source);
 
                 // Считаем счётчики сразу-же
                 if ($report_source->isProgress()) {
@@ -253,7 +250,7 @@ class ReportData extends AbstractDataType
 
         if (empty($result)) {
             foreach ($this->sources() as $source) {
-                array_push($result, $source->getName());
+                $result[] = $source->getName();
             }
         }
 
@@ -282,7 +279,7 @@ class ReportData extends AbstractDataType
      */
     public function getField($path, $default = null)
     {
-        if (($current = $this->getContent()) && is_array($current)) {
+        if (($current = $this->getContent()) && \is_array($current)) {
             $p = strtok((string) $path, '.');
 
             while ($p !== false) {

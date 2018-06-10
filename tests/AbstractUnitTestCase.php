@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-/**
- * Class AbstractUnitTestCase.
- */
 abstract class AbstractUnitTestCase extends TestCase
 {
     /**
@@ -18,7 +15,7 @@ abstract class AbstractUnitTestCase extends TestCase
      */
     public function assertIsArray($value)
     {
-        $this->assertTrue(is_array($value), 'Must be an array');
+        $this->assertTrue(\is_array($value), 'Must be an array');
     }
 
     /**

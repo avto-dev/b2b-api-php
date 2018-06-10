@@ -6,9 +6,6 @@ use Carbon\Carbon;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUid;
 use AvtoDev\B2BApi\Responses\DataTypes\AbstractDataType;
 
-/**
- * Class ReportStatusData.
- */
 class ReportStatusData extends AbstractDataType
 {
     use WithUid;

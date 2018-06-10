@@ -23,11 +23,17 @@ trait ConvertToCarbon
     {
         if ($value instanceof Carbon) {
             return $value;
-        } elseif ($value instanceof DateTime) {
+        }
+
+        if ($value instanceof DateTime) {
             return Carbon::instance($value);
-        } elseif (is_numeric($value)) {
+        }
+
+        if (\is_numeric($value)) {
             return Carbon::createFromTimestamp($value);
-        } elseif (is_string($value)) {
+        }
+
+        if (\is_string($value)) {
             return Carbon::parse($value);
         }
     }

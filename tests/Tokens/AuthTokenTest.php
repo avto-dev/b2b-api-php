@@ -6,8 +6,6 @@ use AvtoDev\B2BApi\Tokens\AuthToken;
 use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 
 /**
- * Class AuthTokenTest.
- *
  * @group tokens
  */
 class AuthTokenTest extends AbstractUnitTestCase

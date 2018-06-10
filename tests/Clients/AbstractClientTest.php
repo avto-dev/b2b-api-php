@@ -8,9 +8,6 @@ use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 use AvtoDev\B2BApi\Exceptions\B2BApiUnsupportedHttpClientException;
 
-/**
- * Class AbstractClientTest.
- */
 class AbstractClientTest extends AbstractClientTestCase
 {
     /**

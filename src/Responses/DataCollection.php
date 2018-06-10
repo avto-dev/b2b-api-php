@@ -16,9 +16,6 @@ use AvtoDev\B2BApi\Responses\DataTypes\User\UserInfoData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 use AvtoDev\B2BApi\Responses\DataTypes\ReportType\ReportTypeData;
 
-/**
- * Class DataCollection.
- */
 class DataCollection implements Configurable, Countable, Iterator
 {
     use ConvertToArray;
@@ -63,27 +60,27 @@ class DataCollection implements Configurable, Countable, Iterator
         foreach ((array) $this->convertToArray($content) as $data_block) {
             switch ($this->getDataType($data_block)) {
                 case static::DATA_TYPE_REPORT:
-                    array_push($this->stack, new ReportData($data_block));
+                    $this->stack[] = new ReportData($data_block);
                     break;
 
                 case static::DATA_TYPE_USER_INFO:
-                    array_push($this->stack, new UserInfoData($data_block));
+                    $this->stack[] = new UserInfoData($data_block);
                     break;
 
                 case static::DATA_TYPE_USER_BALANCE:
-                    array_push($this->stack, new BalanceData($data_block));
+                    $this->stack[] = new BalanceData($data_block);
                     break;
 
                 case static::DATA_TYPE_REPORT_TYPE:
-                    array_push($this->stack, new ReportTypeData($data_block));
+                    $this->stack[] = new ReportTypeData($data_block);
                     break;
 
                 case static::DATA_TYPE_REPORT_MAKE:
-                    array_push($this->stack, new ReportStatusData($data_block));
+                    $this->stack[] = new ReportStatusData($data_block);
                     break;
 
                 default:
-                    array_push($this->stack, new UnknownDataType($data_block));
+                    $this->stack[] = new UnknownDataType($data_block);
             }
         }
     }
@@ -115,7 +112,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function count()
     {
-        return count($this->stack);
+        return \count($this->stack);
     }
 
     /**
@@ -149,7 +146,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function current()
     {
-        return current($this->stack);
+        return \current($this->stack);
     }
 
     /**
@@ -157,7 +154,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function next()
     {
-        return next($this->stack);
+        return \next($this->stack);
     }
 
     /**
@@ -165,7 +162,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function key()
     {
-        return key($this->stack);
+        return \key($this->stack);
     }
 
     /**
@@ -173,7 +170,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function valid()
     {
-        return ($key = $this->key()) && ! is_null($key) && $key !== false;
+        return ($key = $this->key()) && $key !== null && $key !== false;
     }
 
     /**
@@ -181,7 +178,7 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     public function rewind()
     {
-        return reset($this->stack);
+        return \reset($this->stack);
     }
 
     /**
@@ -193,17 +190,22 @@ class DataCollection implements Configurable, Countable, Iterator
      */
     protected function getDataType($data_block)
     {
-        if (is_array($data_block) && ! empty($data_block)) {
-            if (isset($data_block['report_type_uid']) && isset($data_block['query'])) {
-                return static::DATA_TYPE_REPORT;
-            } elseif (isset($data_block['login']) && isset($data_block['state']) && isset($data_block['roles'])) {
-                return static::DATA_TYPE_USER_INFO;
-            } elseif (isset($data_block['balance_type']) && isset($data_block['report_type_uid'])) {
-                return static::DATA_TYPE_USER_BALANCE;
-            } elseif (isset($data_block['state']) && isset($data_block['total_quote']) && isset($data_block['content'])) {
-                return static::DATA_TYPE_REPORT_TYPE;
-            } elseif (isset($data_block['isnew']) && isset($data_block['suggest_get'])) {
-                return static::DATA_TYPE_REPORT_MAKE;
+        if (\is_array($data_block) && ! empty($data_block)) {
+            switch (true) {
+                case isset($data_block['report_type_uid'], $data_block['query']):
+                    return static::DATA_TYPE_REPORT;
+
+                case isset($data_block['login'], $data_block['state'], $data_block['roles']):
+                    return static::DATA_TYPE_USER_INFO;
+
+                case isset($data_block['balance_type'], $data_block['report_type_uid']):
+                    return static::DATA_TYPE_USER_BALANCE;
+
+                case isset($data_block['state'], $data_block['total_quote'], $data_block['content']):
+                    return static::DATA_TYPE_REPORT_TYPE;
+
+                case isset($data_block['isnew'], $data_block['suggest_get']):
+                    return static::DATA_TYPE_REPORT_MAKE;
             }
         }
 

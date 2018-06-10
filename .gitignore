@@ -2,7 +2,7 @@
 /tests/env.php
 
 # Composer lock file
-/composer.lock
+composer.lock
 
 # IDEs
 /nbproject
@@ -14,6 +14,9 @@
 # Temp dirs & trash
 /temp
 /tmp
-/*.tmp
-/coverage
+/install
 /build
+/coverage
+clover-file
+.DS_Store
+.php_cs.cache

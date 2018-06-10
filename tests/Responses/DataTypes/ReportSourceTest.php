@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests\Responses\DataTypes;
 
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportSource;
 
-/**
- * Class ReportSourceTest.
- */
 class ReportSourceTest extends AbstractDataTypeTestCase
 {
     /**

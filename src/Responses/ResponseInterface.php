@@ -5,9 +5,6 @@ namespace AvtoDev\B2BApi\Responses;
 use AvtoDev\B2BApi\Support\Contracts\Jsonable;
 use AvtoDev\B2BApi\Support\Contracts\Arrayable;
 
-/**
- * Interface ResponseInterface.
- */
 interface ResponseInterface extends Arrayable, Jsonable
 {
     /**

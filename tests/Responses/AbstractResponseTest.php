@@ -7,11 +7,6 @@ use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 use AvtoDev\B2BApi\Tests\Responses\Mocks\ArrayableMock;
 use AvtoDev\B2BApi\Tests\Responses\Mocks\AbstractResponseMock;
 
-/**
- * Class AbstractResponseTest.
- *
- * @todo: Write class description.
- */
 class AbstractResponseTest extends AbstractUnitTestCase
 {
     /**

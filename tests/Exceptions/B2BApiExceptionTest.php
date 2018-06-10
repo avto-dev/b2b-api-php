@@ -7,8 +7,6 @@ use AvtoDev\B2BApi\Exceptions\B2BApiException;
 use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 
 /**
- * Class B2BApiExceptionTest.
- *
  * Тест базового исключения.
  */
 class B2BApiExceptionTest extends AbstractUnitTestCase

@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests\Tokens;
 
 use AvtoDev\B2BApi\Tokens\AbstractToken;
 
-/**
- * Class AbstractTokenMock.
- */
 class AbstractTokenMock extends AbstractToken
 {
     /**

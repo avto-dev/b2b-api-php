@@ -5,9 +5,6 @@ namespace AvtoDev\B2BApi\Tests\References;
 use AvtoDev\B2BApi\References\QueryTypes;
 use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 
-/**
- * Class QueryTypesTest.
- */
 class QueryTypesTest extends AbstractUnitTestCase
 {
     /**

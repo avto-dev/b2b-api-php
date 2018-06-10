@@ -6,9 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 use AvtoDev\B2BApi\Tests\HttpClients\Mocks\GuzzleHttpClientMock;
 
-/**
- * Class AbstractHttpClientTest.
- */
 class AbstractHttpClientTest extends AbstractUnitTestCase
 {
     /**

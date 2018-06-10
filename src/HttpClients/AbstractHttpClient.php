@@ -7,8 +7,6 @@ use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\Clients\ClientInterface;
 
 /**
- * Class AbstractHttpClient.
- *
  * Абстрактный класс HTTP-клиента.
  */
 abstract class AbstractHttpClient
@@ -66,7 +64,7 @@ abstract class AbstractHttpClient
             $this->callbacks[$event_type] = [];
         }
 
-        array_push($this->callbacks[$event_type], $callback);
+        $this->callbacks[$event_type][] = $callback;
 
         return $this;
     }

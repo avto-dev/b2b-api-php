@@ -14,8 +14,6 @@ use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 use AvtoDev\B2BApi\Responses\DataTypes\ReportType\ReportTypeData;
 
 /**
- * Class SomeFeatureTestsTest.
- *
  * Функциональные тесты.
  *
  * @group feature

@@ -6,9 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
 use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 
-/**
- * Interface ClientInterface.
- */
 interface ClientInterface
 {
     /**

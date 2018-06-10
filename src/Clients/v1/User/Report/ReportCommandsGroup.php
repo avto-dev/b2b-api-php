@@ -11,8 +11,6 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Exceptions\B2BApiInvalidArgumentException;
 
 /**
- * Class ReportCommandsGroup.
- *
  * API команды группы User\Report.
  */
 class ReportCommandsGroup extends AbstractApiCommandsGroup

@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests\Responses\DataTypes;
 
 use AvtoDev\B2BApi\Tests\Responses\DataTypes\Mocks\AbstractDataTypeMock;
 
-/**
- * Class AbstractDataTypeTest.
- */
 class AbstractDataTypeTest extends AbstractDataTypeTestCase
 {
     /**

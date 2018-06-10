@@ -3,8 +3,6 @@
 namespace AvtoDev\B2BApi\References;
 
 /**
- * Class QueryTypes.
- *
  * Справочник: Типы идентификаторов.
  */
 class QueryTypes extends AbstractReference

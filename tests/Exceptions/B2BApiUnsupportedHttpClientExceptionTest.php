@@ -7,8 +7,6 @@ use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 use AvtoDev\B2BApi\Exceptions\B2BApiUnsupportedHttpClientException;
 
 /**
- * Class B2BApiUnsupportedHttpClientExceptionTest.
- *
  * Тест исключения неподдерживаемого http-клиент.
  */
 class B2BApiUnsupportedHttpClientExceptionTest extends AbstractUnitTestCase

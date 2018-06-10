@@ -6,9 +6,6 @@ use AvtoDev\B2BApi\Traits\ConvertToArray;
 use AvtoDev\B2BApi\Traits\ConvertToCarbon;
 use AvtoDev\B2BApi\Traits\StackValuesDotAccessible;
 
-/**
- * Class AbstractDataType.
- */
 abstract class AbstractDataType implements DataTypeInterface
 {
     use ConvertToArray, ConvertToCarbon, StackValuesDotAccessible {
@@ -38,7 +35,7 @@ abstract class AbstractDataType implements DataTypeInterface
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->toArray(), $options);
+        return \json_encode($this->toArray(), $options);
     }
 
     /**

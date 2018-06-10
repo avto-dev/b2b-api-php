@@ -10,8 +10,6 @@ use AvtoDev\B2BApi\HttpClients\GuzzleHttpClient;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 
 /**
- * Class FakeHttpClientDriverTest.
- *
  * Тесты Guzzle драйвера HTTP клиента.
  */
 class GuzzleHttpClientDriverTest extends AbstractUnitTestCase

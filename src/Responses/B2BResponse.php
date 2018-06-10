@@ -5,8 +5,6 @@ namespace AvtoDev\B2BApi\Responses;
 use Countable;
 
 /**
- * Class B2BResponse.
- *
  * Объект ответа от сервиса B2B.
  */
 class B2BResponse extends AbstractResponse implements Countable
@@ -40,7 +38,7 @@ class B2BResponse extends AbstractResponse implements Countable
         $this->data = new DataCollection(isset($this->raw['data']) ? $this->raw['data'] : null);
 
         // Если есть данные о времени исполнения запроса (ищем по фиксированному ключу)
-        if (is_array($input) && isset($input[static::REQUEST_DURATION_KEY_NAME])) {
+        if (\is_array($input) && isset($input[static::REQUEST_DURATION_KEY_NAME])) {
             $this->request_duration = (float) $input[static::REQUEST_DURATION_KEY_NAME];
         }
     }

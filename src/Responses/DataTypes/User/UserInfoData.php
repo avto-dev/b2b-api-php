@@ -13,9 +13,6 @@ use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithCreated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUpdated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithDomainUid;
 
-/**
- * Class UserInfoData.
- */
 class UserInfoData extends AbstractDataType
 {
     use WithActive, WithCreated, WithUpdated, WithUid, WithComment, WithTags, WithName, WithState, WithDomainUid;
@@ -69,7 +66,7 @@ class UserInfoData extends AbstractDataType
      */
     public function getRoles()
     {
-        return is_string($value = $this->getContentValue('roles', null))
+        return \is_string($value = $this->getContentValue('roles', null))
             ? array_filter(explode(',', (string) $value))
             : null;
     }

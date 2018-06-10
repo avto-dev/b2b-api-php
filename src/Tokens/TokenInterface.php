@@ -2,9 +2,6 @@
 
 namespace AvtoDev\B2BApi\Tokens;
 
-/**
- * Interface TokenInterface.
- */
 interface TokenInterface
 {
     /**

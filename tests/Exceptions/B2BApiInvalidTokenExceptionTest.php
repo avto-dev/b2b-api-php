@@ -7,8 +7,6 @@ use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 use AvtoDev\B2BApi\Exceptions\B2BApiInvalidTokenException;
 
 /**
- * Class B2BApiInvalidTokenExceptionTest.
- *
  * Тест исключения неверного токена.
  */
 class B2BApiInvalidTokenExceptionTest extends AbstractUnitTestCase

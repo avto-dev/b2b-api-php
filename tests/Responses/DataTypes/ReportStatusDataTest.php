@@ -5,9 +5,6 @@ namespace AvtoDev\B2BApi\Tests\Responses\DataTypes;
 use Carbon\Carbon;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 
-/**
- * Class ReportStatusDataTest.
- */
 class ReportStatusDataTest extends AbstractDataTypeTestCase
 {
     /**

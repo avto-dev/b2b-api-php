@@ -6,9 +6,6 @@ use Carbon\Carbon;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportSource;
 
-/**
- * Class ReportDataTest.
- */
 class ReportDataTest extends AbstractDataTypeTestCase
 {
     /**

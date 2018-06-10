@@ -7,8 +7,6 @@ use AvtoDev\B2BApi\Clients\v1\Dev\DevCommandsGroup;
 use AvtoDev\B2BApi\Clients\v1\User\UserCommandsGroup;
 
 /**
- * Class Client.
- *
  * Клиент для работы с B2B API.
  */
 class Client extends AbstractClient

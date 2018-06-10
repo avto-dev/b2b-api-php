@@ -5,8 +5,6 @@ namespace AvtoDev\B2BApi\Tokens;
 use Carbon\Carbon;
 
 /**
- * Class AuthToken.
- *
  * Класс для работы с токенами авторизации.
  */
 class AuthToken extends AbstractToken
@@ -49,7 +47,7 @@ class AuthToken extends AbstractToken
         $token_info = (array) static::parse($auth_token);
         $username   = isset($token_info['username']) ? (string) $token_info['username'] : null;
 
-        if (is_string($username) && mb_strlen($username) >= 1) {
+        if (\is_string($username) && mb_strlen($username) >= 1) {
             if (mb_strpos($username, '@') !== false) {
                 $just_username = mb_substr($username, 0, mb_strpos($username, '@'));
                 if (mb_strlen($just_username) >= 1) {
@@ -76,7 +74,7 @@ class AuthToken extends AbstractToken
      */
     public static function parse($auth_token)
     {
-        if (! empty($auth_token) && is_string($auth_token)) {
+        if (! empty($auth_token) && \is_string($auth_token)) {
             // Проверяем наличие префикса в токене
             if (mb_strpos($auth_token, trim(static::TOKEN_PREFIX)) !== false) {
                 // Удаляем префикс
@@ -91,7 +89,7 @@ class AuthToken extends AbstractToken
             $salted_hash = isset($parts[3]) ? $parts[3] : null;
 
             // И проверяем их
-            if (is_string($username) && is_numeric($timestamp) && is_numeric($age) && is_string($salted_hash)) {
+            if (\is_string($username) && \is_numeric($timestamp) && \is_numeric($age) && \is_string($salted_hash)) {
                 return [
                     'username'    => $username,
                     'timestamp'   => (int) $timestamp,

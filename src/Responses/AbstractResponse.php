@@ -7,9 +7,6 @@ use AvtoDev\B2BApi\Traits\ConvertToArray;
 use AvtoDev\B2BApi\Traits\ConvertToCarbon;
 use AvtoDev\B2BApi\Traits\StackValuesDotAccessible;
 
-/**
- * Class AbstractResponse.
- */
 abstract class AbstractResponse implements ResponseInterface
 {
     use ConvertToCarbon, ConvertToArray, StackValuesDotAccessible {
@@ -31,7 +28,7 @@ abstract class AbstractResponse implements ResponseInterface
      */
     public function __construct($input = null)
     {
-        if (! empty($input) || is_object($input)) {
+        if (! empty($input) || \is_object($input)) {
             $this->setRaw($input);
         }
     }
@@ -65,7 +62,7 @@ abstract class AbstractResponse implements ResponseInterface
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->toArray(), $options);
+        return \json_encode($this->toArray(), $options);
     }
 
     /**

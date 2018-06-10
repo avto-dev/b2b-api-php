@@ -6,8 +6,6 @@ use AvtoDev\B2BApi\Support\Contracts\Jsonable;
 use AvtoDev\B2BApi\Support\Contracts\Arrayable;
 
 /**
- * Class AbstractReference.
- *
  * Абстрактный класс справочника. Как правило, справочник реализует статические методы для получения данных.
  */
 abstract class AbstractReference implements ReferenceInterface, Arrayable, Jsonable
@@ -17,7 +15,7 @@ abstract class AbstractReference implements ReferenceInterface, Arrayable, Jsona
      */
     public static function has($value)
     {
-        return in_array($value, static::getAll(), true);
+        return \in_array($value, static::getAll(), true);
     }
 
     /**
@@ -33,6 +31,6 @@ abstract class AbstractReference implements ReferenceInterface, Arrayable, Jsona
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->toArray(), $options);
+        return \json_encode($this->toArray(), $options);
     }
 }

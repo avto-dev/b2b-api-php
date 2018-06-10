@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Responses\DataTypes\User;
 
 use AvtoDev\B2BApi\Responses\DataTypes\AbstractDataType;
 
-/**
- * Class BalanceData.
- */
 class BalanceData extends AbstractDataType
 {
     /**

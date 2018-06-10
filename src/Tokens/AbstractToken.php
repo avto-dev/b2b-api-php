@@ -3,8 +3,6 @@
 namespace AvtoDev\B2BApi\Tokens;
 
 /**
- * Class AbstractToken.
- *
  * Абстрактный класс для работы с токенами.
  */
 abstract class AbstractToken implements TokenInterface

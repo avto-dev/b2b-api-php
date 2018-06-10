@@ -6,8 +6,6 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Client as VendorGuzzleHttpClient;
 
 /**
- * Class GuzzleHttpClient.
- *
  * Реализация HTTP-клиента, использующего пакет
  */
 class GuzzleHttpClient extends AbstractHttpClient
@@ -24,15 +22,15 @@ class GuzzleHttpClient extends AbstractHttpClient
      */
     public function request($method, $uri, array $data = [], array $headers = [])
     {
-        $method = mb_strtoupper(trim((string) $method));
+        $method = \mb_strtoupper(trim((string) $method));
 
         // Если использует GET-запрос, то передаваемые данные клиент вставит в сам запрос. Если же POST или PUT - то
         // данные будут переданы в теле самого запроса
         $query   = $method === 'GET'
             ? $data
             : null;
-        $body    = in_array($method, ['PUT', 'POST', 'DELETE']) && $data !== []
-            ? json_encode($data)
+        $body    =\ in_array($method, ['PUT', 'POST', 'DELETE'], true) && $data !== []
+            ? \json_encode($data)
             : null;
         $headers = array_replace_recursive([
             'Content-Type' => 'application/json',
@@ -42,7 +40,7 @@ class GuzzleHttpClient extends AbstractHttpClient
 
         $this->fire('before_request', $method, $uri, $body, $headers);
 
-        $response = ($this->endsWith($uri, 'just/for/internal/test'))
+        $response = $this->endsWith($uri, 'just/for/internal/test')
             ? new Response(200, ['X-Fake' => true], '["Just for a test"]')
             : $this->http_client->request($method, (string) $uri, [
                 'query'   => $query,
@@ -65,9 +63,9 @@ class GuzzleHttpClient extends AbstractHttpClient
      */
     protected function endsWith($haystack, $needle)
     {
-        $length = mb_strlen($needle);
+        $length = \mb_strlen($needle);
 
-        return $length === 0 || (mb_substr($haystack, -$length) === $needle);
+        return $length === 0 || (\mb_substr($haystack, -$length) === $needle);
     }
 
     /**

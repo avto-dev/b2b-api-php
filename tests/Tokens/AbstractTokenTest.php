@@ -5,9 +5,6 @@ namespace AvtoDev\B2BApi\Tests\Tokens;
 use AvtoDev\B2BApi\Tokens\AbstractToken;
 use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 
-/**
- * Class AbstractTokenTest.
- */
 class AbstractTokenTest extends AbstractUnitTestCase
 {
     /**

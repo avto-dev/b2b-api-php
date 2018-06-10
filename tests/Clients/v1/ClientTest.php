@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Tests\Clients\v1;
 
 use AvtoDev\B2BApi\Clients\v1\Dev\DevCommandsGroup;
 
-/**
- * Class ClientTest.
- */
 class ClientTest extends ClientTestCase
 {
     /**

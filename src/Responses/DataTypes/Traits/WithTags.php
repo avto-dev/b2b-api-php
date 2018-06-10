@@ -14,7 +14,7 @@ trait WithTags
      */
     public function getTags()
     {
-        return is_string($value = $this->getContentValue('tags', null))
+        return \is_string($value = $this->getContentValue('tags', null))
             ? array_unique(array_filter(explode(',', $value)))
             : null;
     }

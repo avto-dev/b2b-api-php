@@ -2,9 +2,6 @@
 
 namespace AvtoDev\B2BApi\Support\Contracts;
 
-/**
- * Interface ResponseInterface.
- */
 interface Arrayable
 {
     /**

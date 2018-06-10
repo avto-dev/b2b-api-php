@@ -2,9 +2,6 @@
 
 namespace AvtoDev\B2BApi\References;
 
-/**
- * Interface ReferenceInterface.
- */
 interface ReferenceInterface
 {
     /**

@@ -8,8 +8,6 @@ use AvtoDev\B2BApi\Exceptions\B2BApiException;
 use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 
 /**
- * Class UserCommandsGroup.
- *
  * API команды группы Dev\User.
  */
 class UserCommandsGroup extends AbstractApiCommandsGroup

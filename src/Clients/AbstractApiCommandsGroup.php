@@ -4,9 +4,6 @@ namespace AvtoDev\B2BApi\Clients;
 
 use AvtoDev\B2BApi\Traits\ConvertToCarbon;
 
-/**
- * Class AbstractApiCommandsGroup.
- */
 abstract class AbstractApiCommandsGroup
 {
     use ConvertToCarbon;

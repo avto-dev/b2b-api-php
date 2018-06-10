@@ -5,9 +5,6 @@ namespace AvtoDev\B2BApi\Tests\Clients\v1;
 use AvtoDev\B2BApi\Clients\v1\Client;
 use AvtoDev\B2BApi\Tests\Clients\AbstractClientTestCase;
 
-/**
- * Class ClientTestCase.
- */
 abstract class ClientTestCase extends AbstractClientTestCase
 {
     // Идентификатор пользователя

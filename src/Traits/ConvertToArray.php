@@ -19,15 +19,17 @@ trait ConvertToArray
     protected function convertToArray($value)
     {
         // Если получен массив - то просто кидаем его в raw
-        if (is_array($value)) {
+        if (\is_array($value)) {
             return $value;
-        } elseif (is_string($value)) {
+        }
+
+        if (\is_string($value)) {
             // Если влетела строка - то считаем что это json, и пытаемся его разобрать
             $json = json_decode($value, true);
-            if (json_last_error() === JSON_ERROR_NONE && is_array($json)) {
+            if (\is_array($json) && \json_last_error() === JSON_ERROR_NONE) {
                 return $json;
             }
-        } elseif (is_object($value) && method_exists($value, 'toArray')) {
+        } elseif (\is_object($value) && \method_exists($value, 'toArray')) {
             // Если прилетел объект, и у него есть метод 'convertToArray' - то его и используем
             return $value->toArray();
         } elseif ($value instanceof Response) {

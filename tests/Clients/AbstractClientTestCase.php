@@ -6,9 +6,6 @@ use AvtoDev\B2BApi\Clients\ClientInterface;
 use AvtoDev\B2BApi\Tests\AbstractUnitTestCase;
 use AvtoDev\B2BApi\Tests\Clients\Mocks\AbstractClientMock;
 
-/**
- * Class AbstractClientTestCase.
- */
 abstract class AbstractClientTestCase extends AbstractUnitTestCase
 {
     /**

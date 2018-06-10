@@ -9,8 +9,6 @@ use AvtoDev\B2BApi\Support\Contracts\Arrayable;
 use AvtoDev\B2BApi\Support\Contracts\Configurable;
 
 /**
- * Class ReportSource.
- *
  * Объект - данные по источнику.
  */
 class ReportSource implements Configurable, Arrayable, Jsonable
@@ -162,7 +160,7 @@ class ReportSource implements Configurable, Arrayable, Jsonable
      */
     public function toJson($options = 0)
     {
-        return json_encode($this->toArray(), $options);
+        return \json_encode($this->toArray(), $options);
     }
 
     /**

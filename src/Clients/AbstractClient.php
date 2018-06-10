@@ -14,9 +14,6 @@ use AvtoDev\B2BApi\Traits\StackValuesDotAccessible;
 use AvtoDev\B2BApi\Exceptions\B2BApiUnsupportedHttpClientException;
 use AvtoDev\B2BApi\Responses\ResponseInterface as B2BApiResponseInterface;
 
-/**
- * Class AbstractClient.
- */
 abstract class AbstractClient implements ClientInterface
 {
     use StackValuesDotAccessible {
@@ -131,7 +128,7 @@ abstract class AbstractClient implements ClientInterface
      */
     public function getAvailableApiVersions()
     {
-        return array_keys($this->getConfigValue('api.versions'));
+        return \array_keys($this->getConfigValue('api.versions'));
     }
 
     /**
@@ -139,8 +136,8 @@ abstract class AbstractClient implements ClientInterface
      */
     public function apiRequest($http_method, $api_path, $data = null, $headers = null, $test_response = null)
     {
-        $data    = is_array($data) ? $data : [];
-        $headers = is_array($headers) ? $headers : [];
+        $data    = \is_array($data) ? $data : [];
+        $headers = \is_array($headers) ? $headers : [];
         $uri     = $this->getApiRequestUri($api_path);
 
         try {
@@ -157,7 +154,7 @@ abstract class AbstractClient implements ClientInterface
             }
 
             // Считаем время исполнения запроса (в секундах с дробной частью)
-            $duration = round((microtime(true) - $now), 4);
+            $duration = \round(microtime(true) - $now, 4);
 
             // Это условие, в основном, сделано для тестов
             if ($test_response instanceof ResponseInterface && ($code = $test_response->getStatusCode() >= 400)) {
@@ -170,14 +167,14 @@ abstract class AbstractClient implements ClientInterface
 
             $response_array = json_decode($content = $response->getBody()->getContents(), true);
 
-            if (json_last_error() === JSON_ERROR_NONE) {
-                return array_replace($response_array, [
+            if (\json_last_error() === JSON_ERROR_NONE) {
+                return \array_replace($response_array, [
                     // Добавляем время исполнения запроса в ответ
                     B2BApiResponseInterface::REQUEST_DURATION_KEY_NAME => $duration,
                 ]);
-            } else {
-                throw new B2BApiException(sprintf('Invalid JSON string received: "%s"', $content));
             }
+
+            throw new B2BApiException(sprintf('Invalid JSON string received: "%s"', $content));
         } catch (RequestException $e) {
             $response = $e->getResponse();
             $request  = $e->getRequest();

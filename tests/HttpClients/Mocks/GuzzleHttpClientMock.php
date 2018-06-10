@@ -8,9 +8,6 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Handler\MockHandler;
 use AvtoDev\B2BApi\HttpClients\AbstractHttpClient;
 
-/**
- * Class GuzzleHttpClientMock.
- */
 class GuzzleHttpClientMock extends AbstractHttpClient
 {
     /**

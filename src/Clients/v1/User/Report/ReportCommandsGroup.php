@@ -2,13 +2,13 @@
 
 namespace AvtoDev\B2BApi\Clients\v1\User\Report;
 
-use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
-use AvtoDev\B2BApi\Exceptions\B2BApiException;
-use AvtoDev\B2BApi\Exceptions\B2BApiInvalidArgumentException;
+use GuzzleHttp\Psr7\Response;
+use AvtoDev\B2BApi\Tokens\AuthToken;
 use AvtoDev\B2BApi\References\QueryTypes;
 use AvtoDev\B2BApi\Responses\B2BResponse;
-use AvtoDev\B2BApi\Tokens\AuthToken;
-use GuzzleHttp\Psr7\Response;
+use AvtoDev\B2BApi\Exceptions\B2BApiException;
+use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
+use AvtoDev\B2BApi\Exceptions\B2BApiInvalidArgumentException;
 
 /**
  * API команды группы User\Report.

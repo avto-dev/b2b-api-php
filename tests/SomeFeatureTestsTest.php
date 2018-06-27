@@ -159,13 +159,15 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
         $now = Carbon::now()->getTimestamp();
 
         $this->assertEquals(
-            ! $this->is_test ? AuthToken::generate(
+            ! $this->is_test
+                ? AuthToken::generate(
                 $this->username,
                 $this->password,
                 null, // <-- Не указываем домен
                 $age,
                 $now
-            ) : 'NOT:AVAILABLE:DURING:TESTING',
+            )
+                : 'NOT:AVAILABLE:DURING:TESTING',
             $response = $this->client->dev()->token(
                 $this->username,
                 $this->password,
@@ -176,13 +178,15 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
         );
 
         $this->assertEquals(
-            ! $this->is_test ? AuthToken::generate(
+            ! $this->is_test
+                ? AuthToken::generate(
                 $this->username,
                 $this->password,
                 $this->domain, // <-- Указываем домен
                 $age,
                 $now
-            ) : 'NOT:AVAILABLE:DURING:TESTING',
+            )
+                : 'NOT:AVAILABLE:DURING:TESTING',
             $response = $this->client->dev()->token(
                 sprintf('%s@%s', $this->username, $this->domain),
                 $this->password,
@@ -380,7 +384,6 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
         $this->assertInstanceOf(Carbon::class, $status->getSuggestGet());
         $this->assertIsNotEmptyString($uid = $status->getUid());
         $this->assertTrue($status->isNew());
-        $this->assertEquals($uid, $status->getProcessRequestUid());
     }
 
     /**

@@ -43,7 +43,8 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             [
                 'Authorization' => (string) $auth_token,
             ],
-            $this->client->isTest() ? new Response(
+            $this->client->isTest()
+                ? new Response(
                 200,
                 $this->getTestingResponseHeaders(),
                 str_replace(
@@ -55,7 +56,8 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
                     ],
                     file_get_contents(__DIR__ . '/report_types.json')
                 )
-            ) : null
+            )
+                : null
         ));
     }
 
@@ -89,7 +91,8 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             [
                 'Authorization' => (string) $auth_token,
             ],
-            $this->client->isTest() ? new Response(
+            $this->client->isTest()
+                ? new Response(
                 200,
                 $this->getTestingResponseHeaders(),
                 str_replace(
@@ -101,7 +104,8 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
                     ],
                     file_get_contents(__DIR__ . '/reports.json')
                 )
-            ) : null
+            )
+                : null
         ));
     }
 
@@ -123,13 +127,18 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             'get',
             sprintf('user/reports/%s', urlencode($report_uid)),
             [
-                '_detailed' => (bool) $detailed ? 'true' : 'false',
-                '_content'  => (bool) $with_content ? 'true' : 'false',
+                '_detailed' => (bool) $detailed
+                    ? 'true'
+                    : 'false',
+                '_content'  => (bool) $with_content
+                    ? 'true'
+                    : 'false',
             ],
             [
                 'Authorization' => (string) $auth_token,
             ],
-            $this->client->isTest() ? new Response(
+            $this->client->isTest()
+                ? new Response(
                 200,
                 $this->getTestingResponseHeaders(),
                 str_replace(
@@ -143,7 +152,8 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
                     ],
                     file_get_contents(__DIR__ . '/report.json')
                 )
-            ) : null
+            )
+                : null
         ));
     }
 
@@ -156,13 +166,14 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
      * @param string $query_type      Тип запрашиваемой сущности
      * @param string $query_id        Значение запрашиваемой сущности
      * @param string $report_type_uid UID типа отчета
+     * @param bool   $is_force        Нужно ли перегенерировать отчет если он уже существует?
      *
      * @throws B2BApiInvalidArgumentException
      * @throws B2BApiException
      *
      * @return B2BResponse
      */
-    public function make($auth_token, $query_type, $query_id, $report_type_uid)
+    public function make($auth_token, $query_type, $query_id, $report_type_uid, $is_force = false)
     {
         if (! QueryTypes::has($query_type)) {
             throw new B2BApiInvalidArgumentException(sprintf(
@@ -177,13 +188,18 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             [
                 'queryType' => (string) $query_type,
                 'query'     => (string) $query_id,
+                'options'   => [
+                    'FORCE' => (bool) $is_force,
+                ],
             ],
             [
                 'Authorization' => (string) $auth_token,
             ],
-            $this->client->isTest() ? new Response(
+            $this->client->isTest()
+                ? new Response(
                 200, $this->getTestingResponseHeaders(), file_get_contents(__DIR__ . '/make.json')
-            ) : null
+            )
+                : null
         ));
     }
 
@@ -208,9 +224,11 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             [
                 'Authorization' => (string) $auth_token,
             ],
-            $this->client->isTest() ? new Response(
+            $this->client->isTest()
+                ? new Response(
                 200, $this->getTestingResponseHeaders(), file_get_contents(__DIR__ . '/refresh.json')
-            ) : null
+            )
+                : null
         ));
     }
 }

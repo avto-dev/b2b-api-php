@@ -1,13 +1,13 @@
 {
-  "state": "ok",
-  "size": 1,
-  "stamp": "2017-08-09T20:37:56.278Z",
-  "data": [
-    {
-      "uid": "domain_REPORT_UID_WITH_HASH_HERE@domain",
-      "isnew": true,
-      "process_request_uid": "domain_REPORT_UID_WITH_HASH_HERE@domain",
-      "suggest_get": "2017-08-09T20:37:56.214Z"
-    }
-  ]
+    "state": "ok",
+    "size": 1,
+    "stamp": "2017-08-09T20:37:56.278Z",
+    "data": [
+        {
+            "uid": "domain_REPORT_UID_WITH_HASH_HERE@domain",
+            "isnew": true,
+            "process_request_uid": "domain_ONE_MORE_REPORT_UID_WITH_HASH_HERE@domain",
+            "suggest_get": "2017-08-09T20:37:56.214Z"
+        }
+    ]
 }

@@ -1,17 +1,16 @@
 <p align="center">
-  <img alt="logo" src="https://hsto.org/webt/59/df/45/59df45aa6c9cb971309988.png" width="70"  height="70" />
+  <img alt="logo" src="https://hsto.org/webt/59/df/45/59df45aa6c9cb971309988.png" width="70" height="70" />
 </p>
 
 # PHP-клиент для работы с B2B API
 
-[![Version][badge_version]][link_packagist]
+[![Version][badge_packagist_version]][link_packagist]
+[![Version][badge_php_version]][link_packagist]
 [![Build Status][badge_build_status]][link_build_status]
-[![StyleCI][badge_styleci]][link_styleci]
 [![Coverage][badge_coverage]][link_coverage]
-[![Code Quality][badge_quality]][link_coverage]
-[![Issues][badge_issues]][link_issues]
-[![License][badge_license]][link_license]
+[![Code quality][badge_code_quality]][link_coverage]
 [![Downloads count][badge_downloads_count]][link_packagist]
+[![License][badge_license]][link_license]
 
 Данный пакет является реализацией клиента для работы с сервисом B2B API, значительно упрощающим работу с последним, предоставляя разработчику внятное API.
 
@@ -196,30 +195,46 @@ $ composer update --dev
 $ php ./vendor/bin/phpunit --group=feature
 ```
 
-## Поддержка и развитие
+## Changes log
 
-Если у вас возникли какие-либо проблемы по работе с данным пакетом, пожалуйста, создайте соответствующий `issue` в данном репозитории.
+[![Release date][badge_release_date]][link_releases]
+[![Commits since latest release][badge_commits_since_release]][link_commits]
 
-Если вы способны самостоятельно реализовать тот функционал, что вам необходим - создайте PR с соответствующими изменениями. Крайне желательно сопровождать PR соответствующими тестами, фиксирующими работу ваших изменений. После проверки и принятия изменений будет опубликована новая минорная версия.
+Changes log can be [found here][link_changes_log].
 
-## Лицензирование
+## Support
 
-Код данного пакета распространяется под лицензией [MIT][link_license].
+[![Issues][badge_issues]][link_issues]
+[![Issues][badge_pulls]][link_pulls]
 
-[badge_version]:https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
-[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
-[badge_license]:https://img.shields.io/packagist/l/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
-[badge_build_status]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/build.png?b=master
-[badge_styleci]:https://styleci.io/repos/106674678/shield
-[badge_coverage]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/coverage.png?b=master
-[badge_quality]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/badges/quality-score.png?b=master
-[badge_issues]:https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat&maxAge=30
+If you will find any package errors, please, [make an issue][link_create_issue] in current repository.
+
+## License
+
+This is open-sourced software licensed under the [MIT License][link_license].
+
+[badge_packagist_version]:https://img.shields.io/packagist/v/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_php_version]:https://img.shields.io/packagist/php-v/avto-dev/b2b-api-php.svg?style=flat-square&longCache=true
+[badge_build_status]:https://img.shields.io/scrutinizer/build/g/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180&logo=scrutinizer
+[badge_code_quality]:https://img.shields.io/scrutinizer/g/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_coverage]:https://img.shields.io/scrutinizer/coverage/g/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_license]:https://img.shields.io/packagist/l/avto-dev/b2b-api-php.svg?style=flat-square&longCache=true
+[badge_release_date]:https://img.shields.io/github/release-date/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_commits_since_release]:https://img.shields.io/github/commits-since/avto-dev/b2b-api-php/latest.svg?style=flat-square&maxAge=180
+[badge_issues]:https://img.shields.io/github/issues/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[badge_pulls]:https://img.shields.io/github/issues-pr/avto-dev/b2b-api-php.svg?style=flat-square&maxAge=180
+[link_releases]:https://github.com/avto-dev/b2b-api-php/releases
 [link_packagist]:https://packagist.org/packages/avto-dev/b2b-api-php
-[link_styleci]:https://styleci.io/repos/106674678/
-[link_license]:https://github.com/avto-dev/b2b-api-php/blob/master/LICENSE
 [link_build_status]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/build-status/master
 [link_coverage]:https://scrutinizer-ci.com/g/avto-dev/b2b-api-php/?branch=master
+[link_changes_log]:https://github.com/avto-dev/b2b-api-php/blob/master/CHANGELOG.md
 [link_issues]:https://github.com/avto-dev/b2b-api-php/issues
+[link_create_issue]:https://github.com/avto-dev/b2b-api-php/issues/new/choose
+[link_commits]:https://github.com/avto-dev/b2b-api-php/commits
+[link_pulls]:https://github.com/avto-dev/b2b-api-php/pulls
+[link_license]:https://github.com/avto-dev/b2b-api-php/blob/master/LICENSE
+[getcomposer]:https://getcomposer.org/download/
 [client_v1]:./src/Clients/v1/Client.php
 [http_client]:./src/HttpClients/AbstractHttpClient.php
 [http_client_guzzle]:./src/HttpClients/GuzzleHttpClient.php
@@ -228,4 +243,3 @@ $ php ./vendor/bin/phpunit --group=feature
 [UnknownDataType]:./src/Responses/DataTypes/UnknownDataType.php
 [data_types]:./src/Responses/DataTypes
 [feature_test_file]:./tests/SomeFeatureTestsTest.php
-[getcomposer]:https://getcomposer.org/download/

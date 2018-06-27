@@ -2,24 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
-## [v2.x.x]
+## [v2.3.0] - 2018-06-27
 
 ### Added
 
-- `is_force` flag to `->user()->report()->make()` method [#6](https://github.com/avto-dev/b2b-api-php/issues/6)
+- `is_force` flag to `->user()->report()->make()` method [#6]
 
 ### Changed
 
-- Issues & PR templates updated
+- Issues & PR templates
 
 ### Fixed
 
-- [#7](https://github.com/avto-dev/b2b-api-php/issues/7) Different process_request_uid and uid in ->user()->report()->refresh() method
+- Different `process_request_uid` and uid in `->user()->report()->refresh()` method [#7]
 
-## [v2.2] - 2018-06-10
+## [v2.2.0] - 2018-06-10
 
 ### Changed
 
@@ -34,6 +33,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - API backward compatible fix with passing empty data (for example - on calling `_refresh` method)
 
-[v2.x.x]: https://github.com/avto-dev/b2b-api-php/compare/v2.2.0...HEAD
-[v2.2]: https://github.com/avto-dev/b2b-api-php/compare/v2.1.5...v2.2.0
-[v2.1.5]: https://github.com/avto-dev/b2b-api-php/compare/v2.1.4...v2.1.5
+[v2.3.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.2.0...v2.3.0
+[v2.2.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.5...v2.2.0
+[v2.1.5]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.4...v2.1.5
+
+[#7]:https://github.com/avto-dev/b2b-api-php/issues/7
+[#6]:https://github.com/avto-dev/b2b-api-php/issues/6
+
+[keepachangelog]:https://keepachangelog.com/en/1.0.0/
+[semver]:https://semver.org/spec/v2.0.0.html

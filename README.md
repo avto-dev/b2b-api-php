@@ -21,7 +21,7 @@
 Для установки данного пакета выполните в терминале следующую команду:
 
 ```shell
-$ composer require avto-dev/b2b-api-php "^2.2"
+$ composer require avto-dev/b2b-api-php "^2.4"
 ```
 
 > Для этого необходим установленный `composer`. Для его установки перейдите по [данной ссылке][getcomposer].

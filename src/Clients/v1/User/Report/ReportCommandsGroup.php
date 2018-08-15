@@ -167,13 +167,14 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
      * @param string $query_id        Значение запрашиваемой сущности
      * @param string $report_type_uid UID типа отчета
      * @param bool   $is_force        Нужно ли перегенерировать отчет если он уже существует?
+     * @param array  $options         Дополнительные опции запроса
      *
      * @throws B2BApiInvalidArgumentException
      * @throws B2BApiException
      *
      * @return B2BResponse
      */
-    public function make($auth_token, $query_type, $query_id, $report_type_uid, $is_force = false)
+    public function make($auth_token, $query_type, $query_id, $report_type_uid, $is_force = false, array $options = [])
     {
         if (! QueryTypes::has($query_type)) {
             throw new B2BApiInvalidArgumentException(sprintf(
@@ -188,9 +189,9 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
             [
                 'queryType' => (string) $query_type,
                 'query'     => (string) $query_id,
-                'options'   => [
+                'options'   => \array_replace_recursive([
                     'FORCE' => (bool) $is_force,
-                ],
+                ], $options),
             ],
             [
                 'Authorization' => (string) $auth_token,
@@ -210,17 +211,22 @@ class ReportCommandsGroup extends AbstractApiCommandsGroup
      *
      * @param string $auth_token Токен безопасности
      * @param string $report_uid UID отчета
+     * @param array  $options    Дополнительные опции запроса
      *
      * @throws B2BApiException
      *
      * @return B2BResponse
      */
-    public function refresh($auth_token, $report_uid)
+    public function refresh($auth_token, $report_uid, array $options = [])
     {
+        $request_body = empty($options)
+            ? null
+            : ['options' => $options];
+
         return new B2BResponse($this->client->apiRequest(
             'post',
             sprintf('user/reports/%s/_refresh', urlencode($report_uid)),
-            null,
+            $request_body,
             [
                 'Authorization' => (string) $auth_token,
             ],

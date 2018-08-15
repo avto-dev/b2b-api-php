@@ -112,7 +112,14 @@ class UserReportCommandsTest extends ClientTestCase
 
         $this->assertInstanceOf(
             B2BResponse::class,
-            $response = $this->client->user()->report()->make($this->dev_token, 'bla bla', 'A111AA177', $this->dev_test_report_type_uid)
+            $response = $this->client->user()->report()->make(
+                $this->dev_token,
+                'bla bla',
+                'A111AA177',
+                $this->dev_test_report_type_uid,
+                true,
+                []
+            )
         );
     }
 
@@ -123,7 +130,11 @@ class UserReportCommandsTest extends ClientTestCase
     {
         $this->assertInstanceOf(
             B2BResponse::class,
-            $response = $this->client->user()->report()->refresh($this->dev_token, $this->dev_test_report_uid)
+            $response = $this->client->user()->report()->refresh(
+                $this->dev_token,
+                $this->dev_test_report_uid,
+                []
+            )
         );
 
         foreach (['state', 'size', 'stamp', 'data'] as $key) {

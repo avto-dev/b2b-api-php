@@ -93,12 +93,7 @@ class SomeFeatureTestsTest extends AbstractUnitTestCase
      */
     protected function tearDown()
     {
-        unset($this->client);
-
-        unset($this->username);
-        unset($this->password);
-        unset($this->domain);
-        unset($this->report_type_uid);
+        unset($this->client, $this->username, $this->password, $this->domain, $this->report_type_uid);
 
         parent::tearDown();
     }

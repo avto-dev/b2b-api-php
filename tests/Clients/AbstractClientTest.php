@@ -150,4 +150,51 @@ class AbstractClientTest extends AbstractClientTestCase
             'is' => 'error',
         ])));
     }
+
+    /**
+     * Тест на корректность формирования сообщения исключения и отсутствия явных лимитов на длинну сообщения.
+     *
+     * @return void
+     */
+    public function testApiRequestWithServerErrorExceptionFormatting()
+    {
+        /**
+         * @param        $array
+         * @param int    $size
+         * @param string $key_prefix
+         * @param string $value_prefix
+         */
+        $fillArrayWithRandomDada = function (&$array, $size = 10, $key_prefix = 'key', $value_prefix = '') {
+            for ($i = 0; $i <= $size; $i++) {
+                $array[$key_prefix . $i] = $value_prefix . $i;
+            }
+        };
+
+        $catch = false;
+        $data  = $headers = $response_data = [];
+
+        $fillArrayWithRandomDada($data, \rand(100, 200), 'key', 'Some data value ');
+        $fillArrayWithRandomDada($response_data, \rand(100, 200), 'key', 'Some response value ');
+
+        $response = new Response(500, [], $response_body = \json_encode($response_data));
+
+        try {
+            $this->client->apiRequest(
+                'get',
+                $path = '/foo/bar',
+                $data,
+                $headers,
+                $response
+            );
+        } catch (B2BApiException $e) {
+            $message = $e->getMessage();
+            $this->assertContains("path: '$path'", $message);
+            $this->assertContains('data: \'' . \json_encode($data, JSON_UNESCAPED_UNICODE), $message);
+            $this->assertContains($response_body, $message);
+
+            $catch = true;
+        }
+
+        $this->assertTrue($catch);
+    }
 }

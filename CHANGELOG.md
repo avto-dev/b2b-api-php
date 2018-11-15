@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## v2.4.1 - 2018-11-14
+
+### Changed
+
+- Return full message of error in exception [#11]
+
 ## [v2.4.0] - 2018-08-15
 
 ### Added
@@ -45,6 +51,7 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 [v2.2.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.5...v2.2.0
 [v2.1.5]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.4...v2.1.5
 
+[#11]:https://github.com/avto-dev/b2b-api-php/issues/11
 [#7]:https://github.com/avto-dev/b2b-api-php/issues/7
 [#6]:https://github.com/avto-dev/b2b-api-php/issues/6
 

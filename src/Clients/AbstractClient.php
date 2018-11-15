@@ -182,7 +182,7 @@ abstract class AbstractClient implements ClientInterface
                 'Request to the B2B API (path: "%s", body: "%s") failed with message: "%s"',
                 $request instanceof RequestInterface ? $request->getUri() : null,
                 $request instanceof RequestInterface ? $request->getBody()->getContents() : null,
-                $e->getMessage()
+                $response->getBody()
             ), $response instanceof ResponseInterface ? $response->getStatusCode() : $e->getCode(), $e);
         } catch (Exception $e) {
             throw new B2BApiException(sprintf(

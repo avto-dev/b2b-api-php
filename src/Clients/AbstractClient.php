@@ -4,7 +4,6 @@ namespace AvtoDev\B2BApi\Clients;
 
 use Exception;
 use GuzzleHttp\Psr7\Request;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\RequestException;
 use AvtoDev\B2BApi\Exceptions\B2BApiException;
@@ -35,9 +34,9 @@ abstract class AbstractClient implements ClientInterface
          */
         'api'             => [
             'versions' => [
-            //    'v1' => [
-            //        'base_uri' => null,
-            //    ],
+                //    'v1' => [
+                //        'base_uri' => null,
+                //    ],
             ],
         ],
 
@@ -136,8 +135,12 @@ abstract class AbstractClient implements ClientInterface
      */
     public function apiRequest($http_method, $api_path, $data = null, $headers = null, $test_response = null)
     {
-        $data    = \is_array($data) ? $data : [];
-        $headers = \is_array($headers) ? $headers : [];
+        $data    = \is_array($data)
+            ? $data
+            : [];
+        $headers = \is_array($headers)
+            ? $headers
+            : [];
         $uri     = $this->getApiRequestUri($api_path);
 
         try {
@@ -179,16 +182,28 @@ abstract class AbstractClient implements ClientInterface
             $response = $e->getResponse();
             $request  = $e->getRequest();
 
+            $request_data     = \json_encode($data, JSON_UNESCAPED_UNICODE);
+            $code             = $e->getCode();
+            $response_content = null;
+
+            if ($response instanceof ResponseInterface) {
+                $body = $response->getBody();
+                $uri  = $request->getUri();
+                $code = $response->getStatusCode();
+
+                $response_content = \str_replace(["\n", "\r", "\t"], '', $body->read((int) $body->getSize()));
+            }
+
             throw new B2BApiException(sprintf(
                 'Request to the B2B API (path: \'%s\', data: \'%s\') failed with message: "%s"',
-                $request instanceof RequestInterface ? $request->getUri() : null,
-                \json_encode($data, JSON_UNESCAPED_UNICODE),
-                $response->getBody()->getContents()
-            ), $response instanceof ResponseInterface ? $response->getStatusCode() : $e->getCode(), $e);
+                $uri,
+                $request_data,
+                $response_content
+            ), $code, $e);
         } catch (Exception $e) {
-            throw new B2BApiException(sprintf(
-                'Request to the B2B API failed with message: "%s"', $e->getMessage()
-            ), $e->getCode(), $e);
+            throw new B2BApiException(
+                "Request to the B2B API failed with message: \"{$e->getMessage()}\"", $e->getCode(), $e
+            );
         }
     }
 

@@ -29,7 +29,7 @@ class GuzzleHttpClient extends AbstractHttpClient
         $query   = $method === 'GET'
             ? $data
             : null;
-        $body    =\ in_array($method, ['PUT', 'POST', 'DELETE'], true) && $data !== []
+        $body    = \in_array($method, ['PUT', 'POST', 'DELETE'], true) && $data !== []
             ? \json_encode($data)
             : null;
         $headers = array_replace_recursive([

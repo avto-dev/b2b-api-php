@@ -165,7 +165,7 @@ abstract class AbstractClient implements ClientInterface
                 );
             }
 
-            $response_array = json_decode($content = $response->getBody()->getContents(), true);
+            $response_array = \json_decode($content = $response->getBody()->getContents(), true);
 
             if (\json_last_error() === JSON_ERROR_NONE) {
                 return \array_replace($response_array, [
@@ -178,11 +178,12 @@ abstract class AbstractClient implements ClientInterface
         } catch (RequestException $e) {
             $response = $e->getResponse();
             $request  = $e->getRequest();
+
             throw new B2BApiException(sprintf(
-                'Request to the B2B API (path: "%s", body: "%s") failed with message: "%s"',
+                'Request to the B2B API (path: \'%s\', data: \'%s\') failed with message: "%s"',
                 $request instanceof RequestInterface ? $request->getUri() : null,
-                $request instanceof RequestInterface ? $request->getBody()->getContents() : null,
-                $response->getBody()
+                \json_encode($data, JSON_UNESCAPED_UNICODE),
+                $response->getBody()->getContents()
             ), $response instanceof ResponseInterface ? $response->getStatusCode() : $e->getCode(), $e);
         } catch (Exception $e) {
             throw new B2BApiException(sprintf(

@@ -4,20 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## v2.4.2 - 2018-11-15
+
+### Fixed
+
+- HTTP exception message now contains request body
+
 ## v2.4.1 - 2018-11-14
 
-### Changed
+### Fixed
 
 - Return full message of error in exception [#11]
 
-## [v2.4.0] - 2018-08-15
+## v2.4.0 - 2018-08-15
 
 ### Added
 
 - Options array for `->user()->report()->make()` method
 - Options array for `->user()->report()->refresh()` method
 
-## [v2.3.0] - 2018-06-27
+## v2.3.0 - 2018-06-27
 
 ### Added
 
@@ -31,7 +37,7 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 - Different `process_request_uid` and uid in `->user()->report()->refresh()` method [#7]
 
-## [v2.2.0] - 2018-06-10
+## v2.2.0 - 2018-06-10
 
 ### Changed
 
@@ -40,16 +46,11 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 - Source code a little bit refactored
 - Unimportant PHPDoc blocks removed
 
-## [v2.1.5] - 2018-05-31
+## v2.1.5 - 2018-05-31
 
 ### Fixes
 
 - API backward compatible fix with passing empty data (for example - on calling `_refresh` method)
-
-[v2.4.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.3.0...v2.4.0
-[v2.3.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.2.0...v2.3.0
-[v2.2.0]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.5...v2.2.0
-[v2.1.5]:https://github.com/avto-dev/b2b-api-php/compare/v2.1.4...v2.1.5
 
 [#11]:https://github.com/avto-dev/b2b-api-php/issues/11
 [#7]:https://github.com/avto-dev/b2b-api-php/issues/7

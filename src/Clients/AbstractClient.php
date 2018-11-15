@@ -157,7 +157,7 @@ abstract class AbstractClient implements ClientInterface
             $duration = \round(microtime(true) - $now, 4);
 
             // Это условие, в основном, сделано для тестов
-            if ($test_response instanceof ResponseInterface && ($code = $test_response->getStatusCode() >= 400)) {
+            if ($test_response instanceof ResponseInterface && (($code = $test_response->getStatusCode()) >= 400)) {
                 throw new RequestException(
                     sprintf('Wrong response code: %d', $code),
                     new Request($http_method, $uri),

@@ -173,8 +173,8 @@ class AbstractClientTest extends AbstractClientTestCase
         $catch = false;
         $data  = $headers = $response_data = [];
 
-        $fillArrayWithRandomDada($data, \random_int(100, 200), 'key', 'Some data value ');
-        $fillArrayWithRandomDada($response_data, \random_int(100, 200), 'key', 'Some response value ');
+        $fillArrayWithRandomDada($data, \rand(100, 200), 'key', 'Some data value ');
+        $fillArrayWithRandomDada($response_data, \rand(100, 200), 'key', 'Some response value ');
 
         $response = new Response(500, [], $response_body = \json_encode($response_data));
 

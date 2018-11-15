@@ -165,7 +165,7 @@ class AbstractClientTest extends AbstractClientTestCase
          * @param string $value_prefix
          */
         $fillArrayWithRandomDada = function (&$array, $size = 10, $key_prefix = 'key', $value_prefix = '') {
-            for ($i = 0; $i <= $size; ++$i) {
+            for ($i = 0; $i <= $size; $i++) {
                 $array[$key_prefix . $i] = $value_prefix . $i;
             }
         };

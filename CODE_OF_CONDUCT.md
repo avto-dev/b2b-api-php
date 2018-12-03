@@ -42,6 +42,6 @@ Project maintainers who do not follow or enforce the Code of Conduct in good fai
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4, available at [http://contributor-covenant.org/version/1/4][version]
 
-[project_team]:https://github.com/{%org_name%}/{%repo_name%}
+[project_team]:https://github.com/avto-dev/b2b-api-php
 [homepage]: http://contributor-covenant.org
 [version]: http://contributor-covenant.org/version/1/4/

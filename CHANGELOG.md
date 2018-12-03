@@ -4,26 +4,39 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
-## v2.4.2 - 2018-11-15
+## v2.5.0
+
+### Changed
+
+- Maximal PHP version now is undefined
+- CI changed to [Travis CI][travis]
+- [CodeCov][codecov] integrated
+
+[travis]:https://travis-ci.org/
+[codecov]:https://codecov.io/
+
+## v2.4.2
 
 ### Fixed
 
 - HTTP exception message now contains request body
 
-## v2.4.1 - 2018-11-14
+## v2.4.1
 
 ### Fixed
 
 - Return full message of error in exception [#11]
 
-## v2.4.0 - 2018-08-15
+[#11]:https://github.com/avto-dev/b2b-api-php/issues/11
+
+## v2.4.0
 
 ### Added
 
 - Options array for `->user()->report()->make()` method
 - Options array for `->user()->report()->refresh()` method
 
-## v2.3.0 - 2018-06-27
+## v2.3.0
 
 ### Added
 
@@ -37,7 +50,10 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 
 - Different `process_request_uid` and uid in `->user()->report()->refresh()` method [#7]
 
-## v2.2.0 - 2018-06-10
+[#6]:https://github.com/avto-dev/b2b-api-php/issues/6
+[#7]:https://github.com/avto-dev/b2b-api-php/issues/7
+
+## v2.2.0
 
 ### Changed
 
@@ -46,15 +62,11 @@ The format is based on [Keep a Changelog][keepachangelog] and this project adher
 - Source code a little bit refactored
 - Unimportant PHPDoc blocks removed
 
-## v2.1.5 - 2018-05-31
+## v2.1.5
 
 ### Fixes
 
 - API backward compatible fix with passing empty data (for example - on calling `_refresh` method)
-
-[#11]:https://github.com/avto-dev/b2b-api-php/issues/11
-[#7]:https://github.com/avto-dev/b2b-api-php/issues/7
-[#6]:https://github.com/avto-dev/b2b-api-php/issues/6
 
 [keepachangelog]:https://keepachangelog.com/en/1.0.0/
 [semver]:https://semver.org/spec/v2.0.0.html

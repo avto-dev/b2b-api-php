@@ -152,7 +152,7 @@ $report_status = $client->user()->report()->make($token, QueryTypes::QUERY_TYPE_
                         ->data()
                         ->first();
 if ($report_status instanceof ReportStatusData) {
-    $report_uid = $user_info->getUid(); // Вернёт UID отчета
+    $report_uid = $report_status->getUid(); // Вернёт UID отчета
 }
 
 // Получение имеющегося отчета

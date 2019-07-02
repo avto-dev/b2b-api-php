@@ -41,7 +41,7 @@ class GuzzleHttpClient extends AbstractHttpClient
         $this->fire('before_request', $method, $uri, $body, $headers);
 
         $response = $this->endsWith($uri, 'just/for/internal/test')
-            ? new Response(200, ['X-Fake' => true], '["Just for a test"]')
+            ? new Response(200, ['X-Fake' => 'true'], '["Just for a test"]')
             : $this->http_client->request($method, (string) $uri, [
                 'query'   => $query,
                 'body'    => $body,

@@ -4,6 +4,9 @@ namespace AvtoDev\B2BApi\Responses\DataTypes\User;
 
 use AvtoDev\B2BApi\Responses\DataTypes\AbstractDataType;
 
+/**
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
+ */
 class BalanceData extends AbstractDataType
 {
     /**

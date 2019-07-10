@@ -30,6 +30,7 @@
             "AvtoDev\\B2BApi\\": "src"
         }
     },
+    "abandoned": "avtocod/b2b-api-php",
     "autoload-dev": {
         "psr-4": {
             "AvtoDev\\B2BApi\\Tests\\": "tests"

@@ -6,6 +6,9 @@ use Carbon\Carbon;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUid;
 use AvtoDev\B2BApi\Responses\DataTypes\AbstractDataType;
 
+/**
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
+ */
 class ReportStatusData extends AbstractDataType
 {
     use WithUid;

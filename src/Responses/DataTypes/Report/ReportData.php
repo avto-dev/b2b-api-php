@@ -11,6 +11,9 @@ use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithComment;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithCreated;
 use AvtoDev\B2BApi\Responses\DataTypes\Traits\WithUpdated;
 
+/**
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
+ */
 class ReportData extends AbstractDataType
 {
     use WithActive, WithCreated, WithUpdated, WithUid, WithComment, WithTags, WithName;

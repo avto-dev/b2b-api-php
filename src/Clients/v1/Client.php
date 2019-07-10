@@ -7,7 +7,7 @@ use AvtoDev\B2BApi\Clients\v1\Dev\DevCommandsGroup;
 use AvtoDev\B2BApi\Clients\v1\User\UserCommandsGroup;
 
 /**
- * Клиент для работы с B2B API.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class Client extends AbstractClient
 {

@@ -9,7 +9,7 @@ use AvtoDev\B2BApi\Support\Contracts\Arrayable;
 use AvtoDev\B2BApi\Support\Contracts\Configurable;
 
 /**
- * Объект - данные по источнику.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class ReportSource implements Configurable, Arrayable, Jsonable
 {

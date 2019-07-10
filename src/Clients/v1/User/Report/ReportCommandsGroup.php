@@ -11,7 +11,7 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Exceptions\B2BApiInvalidArgumentException;
 
 /**
- * API команды группы User\Report.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class ReportCommandsGroup extends AbstractApiCommandsGroup
 {

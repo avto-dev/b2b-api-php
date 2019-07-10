@@ -2,7 +2,17 @@
   <img alt="logo" src="https://hsto.org/webt/59/df/45/59df45aa6c9cb971309988.png" width="70" height="70" />
 </p>
 
-# PHP-клиент для работы с B2B API
+---
+
+# THIS PACKAGE IS ABANDONED
+
+And soon will be completely removed. New package is [available here](https://github.com/avtocod/b2b-api-php).
+
+You **must** update your application soon as possible!
+
+---
+
+## PHP-клиент для работы с B2B API
 
 [![Version][badge_packagist_version]][link_packagist]
 [![Version][badge_php_version]][link_packagist]

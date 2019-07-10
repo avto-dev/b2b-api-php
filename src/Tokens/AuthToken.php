@@ -5,7 +5,7 @@ namespace AvtoDev\B2BApi\Tokens;
 use Carbon\Carbon;
 
 /**
- * Класс для работы с токенами авторизации.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class AuthToken extends AbstractToken
 {

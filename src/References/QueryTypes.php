@@ -3,7 +3,7 @@
 namespace AvtoDev\B2BApi\References;
 
 /**
- * Справочник: Типы идентификаторов.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class QueryTypes extends AbstractReference
 {

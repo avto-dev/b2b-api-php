@@ -5,7 +5,7 @@ namespace AvtoDev\B2BApi\Exceptions;
 use Exception;
 
 /**
- * Базовый класс исключения клиента B2B API.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class B2BApiException extends Exception
 {

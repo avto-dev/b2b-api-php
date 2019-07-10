@@ -16,6 +16,9 @@ use AvtoDev\B2BApi\Responses\DataTypes\User\UserInfoData;
 use AvtoDev\B2BApi\Responses\DataTypes\Report\ReportStatusData;
 use AvtoDev\B2BApi\Responses\DataTypes\ReportType\ReportTypeData;
 
+/**
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
+ */
 class DataCollection implements Configurable, Countable, Iterator
 {
     use ConvertToArray;

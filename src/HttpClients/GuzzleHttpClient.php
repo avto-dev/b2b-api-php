@@ -6,7 +6,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Client as VendorGuzzleHttpClient;
 
 /**
- * Реализация HTTP-клиента, использующего пакет
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class GuzzleHttpClient extends AbstractHttpClient
 {

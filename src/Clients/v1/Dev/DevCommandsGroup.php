@@ -12,7 +12,7 @@ use AvtoDev\B2BApi\Clients\AbstractApiCommandsGroup;
 use AvtoDev\B2BApi\Clients\v1\Dev\User\UserCommandsGroup;
 
 /**
- * API команды группы Dev.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class DevCommandsGroup extends AbstractApiCommandsGroup
 {

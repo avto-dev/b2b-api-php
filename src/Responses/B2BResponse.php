@@ -5,7 +5,7 @@ namespace AvtoDev\B2BApi\Responses;
 use Countable;
 
 /**
- * Объект ответа от сервиса B2B.
+ * @deprecated This package is abandoned. New package is available here: <https://github.com/avtocod/b2b-api-php>
  */
 class B2BResponse extends AbstractResponse implements Countable
 {
